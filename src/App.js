@@ -1,7 +1,9 @@
 
 function App() {
   return (
-    <div className="wrapper"/>
+    <div className="wrapper">
+      test!
+    </div>
   );
 }
 
