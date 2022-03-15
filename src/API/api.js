@@ -1,20 +1,19 @@
-import { useEffect } from "react";
+
 import axios from "axios";
 
-const API = () => {
-    useEffect(() => {
-        axios.get('/users').then(({ data }) => {
-            console.log(data);
-            console.log(data[0]);
-        })
+const instance = axios.create({
+    withCredentials: true,
+    baseURL: '/',
+});
 
-        axios.get('/clinics').then(({ data }) => {
-            console.log(data);
-            console.log(data[0]);
-        })
-    }, [])
-
-    return <div></div>
+export const usersAPI = {
+    getAllUsers() {
+        return instance.get('/users')
+    },
 }
 
-export default API;
+export const clinicsAPI = {
+    getAllClinics() {
+        return instance.get('/clinics')
+    }
+}

@@ -1,15 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import API from './API/api';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-import './scss/app.scss';
+import App from './App';
+import store from './Redux/store';
+
+import './Style/app.scss';
+
+//========================================================================================================================================================
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-    <API />
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
