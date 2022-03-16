@@ -1,10 +1,10 @@
 .header {
-    color: #ffffff;
+    color: var(--back-of-elements);
 
     // .header__container
 
     &__container {
-        background: #061519;
+        background: var(--dark-basic);
     }
 
     // .header__body
@@ -56,7 +56,7 @@
     &__logout {
         width: 33px;
         height: 33px;
-        background: #CBE5F0;
+        background: var(--primary-no-contrast);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -107,5 +107,5 @@
 }
 
 .bottom__container {
-    background-color: #0076A3;
+    background-color: var(--accent-basic);
 }

@@ -23,7 +23,7 @@
         input {
             width: 272px;
             height: 30px;
-            border: 1px solid #B7C6CB;
+            border: 1px solid var(--secondary-basic);
             border-radius: 4px;
         }
     }
@@ -52,11 +52,12 @@
     &__calendar {
         width: 33px;
         height: 30px;
-        border: 1px solid #B7C6CB;
+        border: 1px solid var(--secondary-basic);
         border-radius: 4px;
         display: flex;
         align-items: center;
         justify-content: center;
+        background-color: var(--back-of-elements);
     }
 
     // .filter__find
@@ -80,12 +81,12 @@
     // .filter__button
 
     &__button {
-        background: #33B1CA;
+        background: var(--accent-no-contrast);
         border-radius: 4px;
         padding: 3px 12px;
 
         button {
-            color: #ffffff;
+            color: var(--back-of-elements);
             font-size: 18px;
             font-weight: 700;
         }
@@ -101,7 +102,7 @@
     // .checkbox-filter__toogle
 
     &__toogle {
-        background: #CBE5F0;
+        background: var(--primary-no-contrast);
         border-radius: 4px;
         padding: 6px 8px;
         display: flex;
@@ -126,7 +127,7 @@
         }
 
         input {
-            border: 1px solid #B7C6CB;
+            border: 1px solid var(--secondary-basic);
             box-sizing: border-box;
             border-radius: 4px;
             width: 397px;
