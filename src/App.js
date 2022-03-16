@@ -1,11 +1,13 @@
-import TestRedux from "./Components/TestRedux.jsx";
+import Header from "./Components/Header/Header.jsx";
+import MainPage from "./Components/MainPage/MainPage.jsx";
 
 //========================================================================================================================================================
 
 function App() {
   return (
     <div className="wrapper">
-      <TestRedux />
+      <Header />
+      <MainPage />
     </div>
   );
 }

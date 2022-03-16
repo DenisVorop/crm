@@ -1,0 +1,123 @@
+.patient {
+
+    // .patient__container
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    // .patient__row
+
+    &__row {}
+
+    // .patient__body
+
+    &__body {
+        border: 1px solid #B7C6CB;
+        padding: 15px 20px;
+        margin: 0px 30px;
+        width: 1220px;
+    }
+
+    // .patient__row
+
+    &__row {
+        padding: 15px 34px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1180px;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid #CCD6DA;
+        }
+    }
+
+    // .patient__time
+
+    &__time {
+        width: 50px;
+        margin: 0px 60px 0px 0px;
+        font-weight: 700;
+    }
+
+    // .patient__name
+
+    &__name {
+        width: 300px;
+        margin: 0px 105px 0px 0px;
+    }
+
+    // .patient__sexage
+
+    &__sexage {
+        width: 90px;
+        margin: 0px 163px 0px 0px;
+    }
+
+    // .patient__status
+
+    &__status {
+        margin: 0px 155px 0px 0px;
+        padding: 3px 8px;
+        color: #31BF79;
+        background: rgba(148, 227, 188, 0.4);
+        border-radius: 4px;
+        width: 170px;
+    }
+
+    // .patient__info
+
+    &__info {}
+}
+
+//========================================================================================================================================================
+
+.records {
+
+    // .records__row
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 54px;
+        color: #B7C6CB;
+        font-size: 14px;
+        margin: 0px 30px 5px 30px;
+    }
+
+    // .records__time
+
+    &__time {
+        width: 50px;
+        margin: 0px 60px 0px 0px;
+        font-weight: 700;
+    }
+
+    // .records__name
+
+    &__name {
+        width: 300px;
+        margin: 0px 105px 0px 0px;
+    }
+
+    // .records__sexage
+
+    &__sexage {
+        width: 90px;
+        margin: 0px 163px 0px 0px;
+    }
+
+    // .records__status
+
+    &__status {
+        margin: 0px 155px 0px 0px;
+        width: 170px;
+    }
+
+    // .records__info
+
+    &__info {}
+}
