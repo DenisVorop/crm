@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import PatientRecord from "./PatientRecord";
 
-import { getUsersData } from "../../../Redux/Reducers/UsersReducer";
+import { getUsersData } from "../../../Redux/Reducers/usersReducer";
 
 
 //========================================================================================================================================================
