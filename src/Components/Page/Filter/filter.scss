@@ -57,7 +57,7 @@
         margin: 0px 2px 0px 0px;
         border: 1px solid #B7C6CB;
         border-radius: 4px;
-        background-color: #F3F7F9;
+        background-color: #FFFFFF;
         height: 30px;
     }
 
@@ -67,7 +67,7 @@
         padding: 4.5px;
         border: 1px solid #B7C6CB;
         border-radius: 4px;
-        background-color: #F3F7F9;
+        background-color: #FFFFFF;
 
         img {
             width: 21px;
@@ -133,6 +133,11 @@
         height: 30px;
         padding: 0px 0px 0px 30px;
         margin: 0px 3px 0px 0px;
+
+        &::placeholder {
+            font-family: 'Nunito Sans', serif;
+            color: var(--secondary-no-contrast)
+        }
     }
 
     &__checkbox {}

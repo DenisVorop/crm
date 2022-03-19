@@ -10,7 +10,6 @@
 
     &__columns {
         display: flex;
-        justify-content: space-between;
         align-items: center;
         padding: 0px 34px;
     }
@@ -21,4 +20,27 @@
         font-size: 14px;
         color: #B7C6CB;
     }
+}
+
+.time {
+    width: 48px;
+    margin: 0px 73px 0px 0px;
+}
+
+.name {
+    margin: 0px 345px 0px 0px;
+}
+
+.sex {
+    width: 85px;
+    margin: 0px 166px 0px 0px;
+}
+
+.status {
+    margin: 0px 214px 0px 0px;
+}
+
+.info {
+    flex: 1 1 auto;
+    text-align: right;
 }

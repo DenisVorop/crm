@@ -6,12 +6,13 @@ const Record = ({ name, age, sex, status }) => {
         case 'Прием завершен': {
             return (
                 <div className="records__row">
-                    <div className="records__column">10:30</div>
+                    <div className="records__column time-column">10:30</div>
                     <div className="records__column name-column">{name}</div>
                     <div className="records__column sex-column">{sex}, {age}</div>
-                    <div className="records__column status-column" style={{ background: 'rgba(148, 227, 188, .4)', color: '#31BF79' }}>{status}</div>
-                    <div className="records__column">
-                        <img src={info} alt="info" />
+                    <div className="records__column-item"><div className="records__column status-column" style={{ background: 'rgba(148, 227, 188, .4)', color: '#31BF79' }}>{status}</div>
+                        <div className="records__column info-column">
+                            <img src={info} alt="info" />
+                        </div>
                     </div>
                 </div>
             )
@@ -19,12 +20,13 @@ const Record = ({ name, age, sex, status }) => {
         case 'Прием идет': {
             return (
                 <div className="records__row">
-                    <div className="records__column">10:30</div>
+                    <div className="records__column time-column">10:30</div>
                     <div className="records__column name-column">{name}</div>
                     <div className="records__column sex-column">{sex}, {age}</div>
-                    <div className="records__column status-column" style={{ background: 'rgba(255, 220, 173, .4)', color: '#FFB149' }} >{status}</div>
-                    <div className="records__column">
-                        <img src={info} alt="info" />
+                    <div className="records__column-item"><div className="records__column status-column" style={{ background: 'rgba(255, 220, 173, .4)', color: '#FFB149' }} >{status}</div>
+                        <div className="records__column info-column">
+                            <img src={info} alt="info" />
+                        </div>
                     </div>
                 </div>
             )
@@ -32,12 +34,13 @@ const Record = ({ name, age, sex, status }) => {
         case 'Отменен': {
             return (
                 <div className="records__row">
-                    <div className="records__column">10:30</div>
+                    <div className="records__column time-column">10:30</div>
                     <div className="records__column name-column">{name}</div>
                     <div className="records__column sex-column">{sex}, {age}</div>
-                    <div className="records__column status-column" style={{ background: 'rgba(254, 64, 33, .4)', color: '#FE4021' }} >{status}</div>
-                    <div className="records__column">
-                        <img src={info} alt="info" />
+                    <div className="records__column-item"><div className="records__column status-column" style={{ background: 'rgba(254, 64, 33, .4)', color: '#FE4021' }} >{status}</div>
+                        <div className="records__column info-column">
+                            <img src={info} alt="info" />
+                        </div>
                     </div>
                 </div>
             )
@@ -45,12 +48,13 @@ const Record = ({ name, age, sex, status }) => {
         default: {
             return (
                 <div className="records__row">
-                    <div className="records__column">10:30</div>
+                    <div className="records__column time-column">10:30</div>
                     <div className="records__column name-column">{name}</div>
                     <div className="records__column sex-column">{sex}, {age}</div>
-                    <div className="records__column status-column" style={{ background: 'yellow', color: 'black' }} >{status}</div>
-                    <div className="records__column">
-                        <img src={info} alt="info" />
+                    <div className="records__column-item"><div className="records__column status-column" style={{ background: 'yellow', color: 'black' }} >{status}</div>
+                        <div className="records__column info-column">
+                            <img src={info} alt="info" />
+                        </div>
                     </div>
                 </div>
             )
