@@ -5,7 +5,6 @@ import './plan.scss';
 
 import print from '../../../assets/img/print.svg';
 import PrintFile from '../../PrintFile/PrintFile';
-import Records from '../Records/Records';
 
 const Plan = () => {
 
@@ -31,7 +30,6 @@ const Plan = () => {
                 </div>
             </div>
             <div style={{ display: "none" }}>
-                <Records ref={componentRef} />
                 <PrintFile ref={componentRef} />
             </div>
         </div>
