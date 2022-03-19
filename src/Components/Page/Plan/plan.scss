@@ -1,0 +1,31 @@
+.plan {
+    background-color: #0076A3;
+
+    // .plan__container
+
+    &__container {
+        padding: 15px 0;
+    }
+
+    // .plan__header
+
+    &__header {
+        display: flex;
+        align-items: center;
+    }
+
+    // .plan__print
+
+    &__print {
+        margin: 0px 14px 0px 0px;
+        cursor: pointer;
+    }
+
+    // .plan__label
+
+    &__label {
+        font-weight: 700;
+        font-size: 22px;
+        color: #F3F7F9;
+    }
+}

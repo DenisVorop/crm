@@ -1,0 +1,51 @@
+.records {
+
+    // .records__body
+
+    &__body {
+        background: #F3F7F9;
+        border: 1px solid #B7C6CB;
+        border-radius: 4px;
+        padding: 15px 20px;
+    }
+
+    // .records__row
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 14px 14px 14px;
+
+        border-bottom: 1px solid #CCD6DA;
+    }
+
+    // .records__column
+
+    &__column {
+        text-align: center;
+        font-size: 18px;
+
+        &:first-child {
+            font-weight: 700;
+        }
+
+        &:last-child {
+            margin: 0px 5px 0px 0px;
+        }
+    }
+}
+
+.status {
+    background: rgba(148, 227, 188, 0.4);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 8px;
+    margin: 0 -20px 0px 0;
+}
+
+.sex {
+    padding-left: 80px;
+}
