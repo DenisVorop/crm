@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { getUsersData } from '../../../Redux/Reducers/UsersReducer';
+import { getUsersData } from '../../../Redux/Reducers/usersReducer';
 
 import Record from './Record';
 
