@@ -1,19 +1,29 @@
+import { useSelector, useDispatch } from 'react-redux';
+import { getUsersData } from '../../../Redux/Reducers/usersReducer.js';
+
+import Record from './Record';
+
 import './records.scss';
 
-import info from '../../../assets/img/Info.svg'
-
 const Records = () => {
+
+    const { usersData } = useSelector(({ usersReducer }) => usersReducer);
+
+    const dispatch = useDispatch();
+
+    const getUsers = () => {
+        dispatch(getUsersData());
+    }
+
     return (
         <div className="records__body">
-            <div className="records__row">
-                <div className="records__column">10:30</div>
-                <div className="records__column">Иванов Иван Иванович</div>
-                <div className="records__column">М, 34</div>
-                <div className="records__column status">Прием завершен</div>
-                <div className="records__column">
-                    <img src={info} alt="info" />
-                </div>
-            </div>
+            <button onClick={() => { getUsers() }} style={{ cursor: "pointer", margin: "0 0 25px 0" }}>Обновить</button>
+            {usersData.map((obj, index) => {
+                return <Record
+                    key={`${obj}_${index}`}
+                    {...obj}
+                />
+            })}
         </div>
     )
 }

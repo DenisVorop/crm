@@ -13,9 +13,10 @@
 
     &__row {
         display: flex;
-        justify-content: space-between;
+        width: 100%;
         align-items: center;
         padding: 0px 14px 14px 14px;
+        margin: 0px 0px 15px 0px;
 
         border-bottom: 1px solid #CCD6DA;
     }
@@ -23,29 +24,50 @@
     // .records__column
 
     &__column {
-        text-align: center;
+        justify-content: start;
         font-size: 18px;
 
         &:first-child {
             font-weight: 700;
+            width: 48px;
+            margin: 0px 60px 0px 0px;
         }
 
         &:last-child {
-            margin: 0px 5px 0px 0px;
+            margin: 0px 0px 0px 0px;
+            width: 21px;
+            display: flex;
+            flex: 1 1 10%;
+            justify-content: end;
         }
+
     }
 }
 
-.status {
+.status-column {
     background: rgba(148, 227, 188, 0.4);
     border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 3px 8px;
-    margin: 0 -20px 0px 0;
+    width: 170px;
+}
+
+.name-column {
+    width: 350px;
+    text-align: left;
+    margin: 0px 100px 0px 0px;
+}
+
+.sex-column {
+    margin: 0px 240px 0px 0px;
 }
 
 .sex {
-    padding-left: 80px;
+    transform: translate(-30%, 0);
+}
+
+.name {
+    transform: translate(-150%, 0);
 }
