@@ -1,10 +1,6 @@
 .information {
     margin: 0px 0px 15px 0px;
-    // position: absolute;
-    // z-index: 2;
-    // bottom: 20px;
-    // right: 20px;
-    background-color: #fff;
+
     // .information__container
 
     &__container {}
@@ -17,6 +13,7 @@
         width: 365px;
         border: 2px solid #CCD6DA;
         border-radius: 8px;
+        background-color: #fff;
     }
 
     // .information__title

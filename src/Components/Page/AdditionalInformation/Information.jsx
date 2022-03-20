@@ -1,60 +1,60 @@
-import './information.scss';
-
 import eye from '../../../assets/img/eye.svg';
 import copy from '../../../assets/img/copy.svg';
 
-const Information = ({tableRef}) => {
+import './information.scss';
+
+const Information = () => {
     return (
-        <div class="information">
-            <div class="information__container">
-                <div class="information__body" ref={tableRef}>
-                    <div class="information__title">Дополнительная информация</div>
-                    <div class="information__card card-information">
-                        <div class="information__label">Номер карты пациента</div>
-                        <div class="card-information__number">
-                            <div class="card-information__num">236713</div>
-                            <div class="card-information__copy">
+        <div className="information">
+            <div className="information__container">
+                <div className='information__body'>
+                    <div className="information__title">Дополнительная информация</div>
+                    <div className="information__card card-information">
+                        <div className="information__label">Номер карты пациента</div>
+                        <div className="card-information__number">
+                            <div className="card-information__num">236713</div>
+                            <div className="card-information__copy">
                                 <a href='#' ><img src={copy} alt="copy" /></a>
                             </div>
                         </div>
                     </div>
-                    <div class="information__lasts">
-                        <div class="information__label bold">Последние приемы</div>
-                        <div class="information__last last-information">
-                            <div class="last-information__doctor">
-                                <div class="last-information__label">Медицинская сестра (медбрат) участковая</div>
-                                <div class="last-information__name">Иванова Г.Ю.</div>
+                    <div className="information__lasts">
+                        <div className="information__label bold">Последние приемы</div>
+                        <div className="information__last last-information">
+                            <div className="last-information__doctor">
+                                <div className="last-information__label">Медицинская сестра (медбрат) участковая</div>
+                                <div className="last-information__name">Иванова Г.Ю.</div>
                             </div>
-                            <div class="last-information__item">
-                                <div class="last-information__date">14.02.2021</div>
-                                <div class="last-information__building">Название филиала №2</div>
-                                <div class="last-information__see">
+                            <div className="last-information__item">
+                                <div className="last-information__date">14.02.2021</div>
+                                <div className="last-information__building">Название филиала №2</div>
+                                <div className="last-information__see">
                                     <a href='#' ><img src={eye} alt="eye" /></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="information__last last-information chetnoe">
-                            <div class="last-information__doctor">
-                                <div class="last-information__label">Медицинская сестра (медбрат) участковая</div>
-                                <div class="last-information__name">Иванова Г.Ю.</div>
+                        <div className="information__last last-information chetnoe">
+                            <div className="last-information__doctor">
+                                <div className="last-information__label">Медицинская сестра (медбрат) участковая</div>
+                                <div className="last-information__name">Иванова Г.Ю.</div>
                             </div>
-                            <div class="last-information__item">
-                                <div class="last-information__date">14.02.2021</div>
-                                <div class="last-information__building">Название филиала №2</div>
-                                <div class="last-information__see">
+                            <div className="last-information__item">
+                                <div className="last-information__date">14.02.2021</div>
+                                <div className="last-information__building">Название филиала №2</div>
+                                <div className="last-information__see">
                                     <a href='#' ><img src={eye} alt="eye" /></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="information__last last-information">
-                            <div class="last-information__doctor">
-                                <div class="last-information__label">Медицинская сестра (медбрат) участковая</div>
-                                <div class="last-information__name">Иванова Г.Ю.</div>
+                        <div className="information__last last-information">
+                            <div className="last-information__doctor">
+                                <div className="last-information__label">Медицинская сестра (медбрат) участковая</div>
+                                <div className="last-information__name">Иванова Г.Ю.</div>
                             </div>
-                            <div class="last-information__item">
-                                <div class="last-information__date">14.02.2021</div>
-                                <div class="last-information__building">Название филиала №2</div>
-                                <div class="last-information__see">
+                            <div className="last-information__item">
+                                <div className="last-information__date">14.02.2021</div>
+                                <div className="last-information__building">Название филиала №2</div>
+                                <div className="last-information__see">
                                     <a href='#' ><img src={eye} alt="eye" /></a>
                                 </div>
                             </div>

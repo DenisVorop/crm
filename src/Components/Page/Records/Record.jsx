@@ -1,28 +1,11 @@
-import { useRef, useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import info from '../../../assets/img/Info.svg';
 import Information from '../AdditionalInformation/Information';
+import Popup from '../Popup/Popup';
 
 const Record = ({ name, age, sex, status }) => {
-    const [infoVisible, setInfoVisible] = useState(false);
-    const infoRef = useRef();
-    const tableRef = useRef();
-
-    const toggleInfoVisible = () => {
-        setInfoVisible(!infoVisible);
-    };
-
-    const handleOutsideClick = (event) => {
-        const path = event.path || (event.composedPath && event.composedPath());
-        if (!path.includes(infoRef.current) && !path.includes(tableRef.current)) {
-            setInfoVisible(false);
-        }
-    }
-
-
-    useEffect(() => {
-        document.body.addEventListener('click', handleOutsideClick);
-    }, []);
+    const [popupActive, setPopupActive] = useState(false);
 
     let statusStyle = {};
 
@@ -35,18 +18,20 @@ const Record = ({ name, age, sex, status }) => {
 
     return (
         <>
-            <div className="records__row" ref={infoRef}>
+            <div className="records__row">
                 <div className="records__column time-column">10:30</div>
                 <div className="records__column name-column">{name}</div>
                 <div className="records__column sex-column">{sex}, {age}</div>
                 <div className="records__column-item">
                     <div className="records__column status-column" style={statusStyle}>{status}</div>
                     <div className="records__column info-column">
-                        <span onClick={toggleInfoVisible} style={{ cursor: 'pointer' }}><img src={info} alt="info" /></span>
+                        <span style={{ cursor: 'pointer' }} onClick={() => setPopupActive(true)} ><img src={info} alt="info" /></span>
                     </div>
                 </div>
             </div>
-            {infoVisible && <Information tableRef={tableRef}/>}
+            <Popup popupActive={popupActive} setPopupActive={setPopupActive}>
+                <Information />
+            </Popup>
         </>
     )
 }

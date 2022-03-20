@@ -1,9 +1,16 @@
+import React from 'react'
+
 import calendar from '../../../assets/img/calendar.svg'
 import arrowLeft from '../../../assets/img/arrow-l.svg'
 import arrowRight from '../../../assets/img/arrow-r.svg'
 import loop from '../../../assets/img/loop.svg'
 
+import DatePick from '../DatePicker/DatePicker'
+
 const Head = () => {
+
+    const [date, setDate] = React.useState();
+
     return (
         <div className="filter__head">
             <div className="filter__date date-filter">
@@ -12,10 +19,12 @@ const Head = () => {
                     <a href="#" className="date-filter__arrow-l">
                         <img src={arrowLeft} alt="arrow-l" />
                     </a>
-                    <input type="text" className="date-filter__choice" />
-                    <div className="date-filter__calendar">
+                    <span className="date-filter__choice">
+                        <DatePick />
+                    </span>
+                    <label className="date-filter__calendar" for="datepicker">
                         <img src={calendar} alt="calendar" />
-                    </div>
+                    </label>
                     <a href="#" className="date-filter__arrow-r">
                         <img src={arrowRight} alt="arrow-r" />
                     </a>
@@ -23,8 +32,8 @@ const Head = () => {
             </div>
             <div className="filter__patient patient-filter">
                 <div className="patient-filter__card">
-                    <div className="patient-filter__label">Номер карты</div>
-                    <input type="checkbox" className="patient-filter__checkbox" />
+                    <label className="patient-filter__label" for="check1">Номер карты</label>
+                    <input type="checkbox" className="patient-filter__checkbox" id="check1" />
                 </div>
                 <div className="patient-filter__number">
                     <img src={loop} alt="loop" />
