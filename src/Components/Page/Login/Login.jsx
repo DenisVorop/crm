@@ -1,8 +1,28 @@
 import { Form, Formik } from 'formik';
+// import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { getAdmin } from '../../../Redux/Reducers/authReducer';
+
 import './login.scss'
 
 
+
 const Login = () => {
+
+    const { admin, login, password } = useSelector(({ authReducer }) => authReducer);
+    const dispatch = useDispatch();
+
+    if (admin.login === login && admin.password === password) {
+        console.log('You are login!')
+    } else {
+        console.log('Incorrect login or password!')
+    }
+
+    const getLoginValues = (values) => {
+        dispatch(getAdmin(values));
+    }
+
     return (
         <Formik
             initialValues={{
@@ -12,7 +32,7 @@ const Login = () => {
             validateOnBlur={false}
             validateOnChange={false}
             onSubmit={(values) => {
-                console.log(values)
+                getLoginValues(values)
             }}
         // validationSchema={validationLogin}
         >

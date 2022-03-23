@@ -17,3 +17,9 @@ export const clinicsAPI = {
         return instance.get('/clinics')
     }
 }
+
+export const authAPI = {
+    getAuthAdmin() {
+        return instance.get('/admin')
+    }
+}
