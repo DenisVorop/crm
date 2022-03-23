@@ -8,11 +8,11 @@
     // .information__body
 
     &__body {
-        display: flex;
-        flex-direction: column;
-        width: 365px;
-        border: 2px solid #CCD6DA;
-        border-radius: 8px;
+        // display: flex;
+        // flex-direction: column;
+        // width: 365px;
+        // border: 2px solid #CCD6DA;
+        // border-radius: 8px;
         background-color: #fff;
     }
 
@@ -36,8 +36,10 @@
     // .information__label
 
     &__label {
-        margin: 0px 68px 0px 0px;
+        // margin: 0px 68px 0px 0px;
         font-size: 16px;
+        margin: 0px 0px 9px 0px;
+        line-height: 22px;
     }
 
     // .information__lasts
@@ -92,6 +94,7 @@
     &__label {
         margin: 0px 0px 1px 0px;
         font-weight: 700;
+        line-height: 19.1px;
     }
 
     // .last-information__name
@@ -99,6 +102,7 @@
     &__name {
         font-weight: 400;
         margin: 0px 0px 14px 0px;
+        line-height: 19px;
     }
 
     // .last-information__item
@@ -128,4 +132,9 @@
 
 .chetnoe {
     background-color: #FFFFFF;
+}
+
+.lasts-information__records {
+    display: flex;
+    gap: 17px;
 }

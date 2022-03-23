@@ -12,13 +12,21 @@
     // .records__row
 
     &__row {
+        border-bottom: 1px solid #CCD6DA;
+        margin: 0px 0px 15px 0px;
+        >:not(:last-child) {
+            margin: 0px 0px 16px 0px;
+        }
+    }
+
+    &__person {
         display: flex;
         width: 100%;
         align-items: center;
         padding: 0px 14px 14px 14px;
-        margin: 0px 0px 15px 0px;
+        // margin: 0px 0px 15px 0px;
 
-        border-bottom: 1px solid #CCD6DA;
+        // border-bottom: 1px solid #CCD6DA;
     }
 
     // .records__column
@@ -63,4 +71,16 @@
 .info-column {
     width: 21px;
     justify-content: flex-end;
+}
+
+.info-visible {
+    // transform: translateY(70%);
+    opacity: 0;
+    transition: 0.7s all;
+}
+
+.info-visible.active {
+    // transform: translateY(0%);
+    opacity: 1;
+    transition: 0.7s opacity;
 }
