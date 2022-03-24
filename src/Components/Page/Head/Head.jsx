@@ -22,7 +22,7 @@ const Head = () => {
                     <span className="date-filter__choice">
                         <DatePick />
                     </span>
-                    <label className="date-filter__calendar" for="datepicker">
+                    <label className="date-filter__calendar" htmlFor="datepicker">
                         <img src={calendar} alt="calendar" />
                     </label>
                     <a href="#" className="date-filter__arrow-r">
@@ -32,7 +32,7 @@ const Head = () => {
             </div>
             <div className="filter__patient patient-filter">
                 <div className="patient-filter__card">
-                    <label className="patient-filter__label" for="check1">Номер карты</label>
+                    <label className="patient-filter__label" htmlFor="check1">Номер карты</label>
                     <input type="checkbox" className="patient-filter__checkbox" id="check1" />
                 </div>
                 <div className="patient-filter__number">

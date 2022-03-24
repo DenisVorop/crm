@@ -10,11 +10,11 @@ import './login.scss'
 
 const Login = () => {
 
-    const { admin, login, password } = useSelector(({ authReducer }) => authReducer);
+    const { admin, login, password, isAuth } = useSelector(({ authReducer }) => authReducer);
     const dispatch = useDispatch();
 
     if (admin.login === login && admin.password === password) {
-        console.log('You are login!')
+        console.log('You are login!', isAuth)
         return <Navigate to='/records' />
     } else {
         console.log('Incorrect login or password!')

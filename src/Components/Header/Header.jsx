@@ -21,7 +21,7 @@ const Header = () => {
                 </div>
                 <div className="header__log">
                     <div className="header__name">Иванова И. Ю.</div>
-                    <a href="/login" className="header__button">
+                    <a href="/" className="header__button">
                         <img src={logout} alt="logout" />
                     </a>
                 </div>

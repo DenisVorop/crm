@@ -8,6 +8,7 @@ const initialState = {
     login: 'admin',
     password: 'admin',
     admin: [],
+    isAuth: false,
 }
 
 //=============REDUCER===========================================================================================================================================
@@ -18,6 +19,7 @@ const authReducer = (state = initialState, action) => {
             return {
                 ...state,
                 admin: action.payload,
+                isAuth: true,
             }
         }
         default: {
