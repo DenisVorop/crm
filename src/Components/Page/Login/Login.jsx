@@ -59,7 +59,7 @@ const Login = () => {
                                     <input
                                         className="login-password__input login-input"
                                         placeholder='Введите пароль'
-                                        type="password"
+                                        type="login"
                                         name='password'
                                         onChange={handleChange}
                                         onBlur={handleBlur}
