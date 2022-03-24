@@ -1,11 +1,11 @@
 import { Form, Formik } from 'formik';
 // import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 
 import { getAdmin } from '../../../Redux/Reducers/authReducer';
 
 import './login.scss'
-
 
 
 const Login = () => {
@@ -15,6 +15,7 @@ const Login = () => {
 
     if (admin.login === login && admin.password === password) {
         console.log('You are login!')
+        return <Navigate to='/records' />
     } else {
         console.log('Incorrect login or password!')
     }
