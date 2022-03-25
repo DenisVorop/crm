@@ -1,21 +1,21 @@
-import { usersAPI } from "../../API/api";
+import { lastRecordsAPI } from "../../API/api";
 
-const GET_USERS = 'GET_USERS';
+const GET_LAST_RECORDS = 'GET_LAST_RECORDS';
 
 //========================================================================================================================================================
 
 const initialState = {
-    usersData: [],
+    lastRecordsData: [],
 }
 
 //=============REDUCER===========================================================================================================================================
 
-const usersReducer = (state = initialState, action) => {
+const lastRecordsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case GET_USERS: {
+        case GET_LAST_RECORDS: {
             return {
                 ...state,
-                usersData: action.payload,
+                lastRecordsData: action.payload,
             }
         }
         default: {
@@ -26,20 +26,20 @@ const usersReducer = (state = initialState, action) => {
 
 //============ACTION CREATOR============================================================================================================================================
 
-export const getUsers = (payload) => {
+export const getLastRecords = (payload) => {
     return {
-        type: GET_USERS,
+        type: GET_LAST_RECORDS,
         payload,
     }
 }
 
 //============THUNKS============================================================================================================================================
 
-export const getUsersData = () => {
+export const getLastRecordsData = () => {
     return async (dispatch) => {
-        const response = await usersAPI.getAllUsers()
+        const response = await lastRecordsAPI.getAllLastRecords()
         if (response.status === 200) {
-            dispatch(getUsers(response.data));
+            dispatch(getLastRecords(response.data));
             console.log(response);
         }
     }
@@ -47,4 +47,4 @@ export const getUsersData = () => {
 
 //========================================================================================================================================================
 
-export default usersReducer;
+export default lastRecordsReducer;

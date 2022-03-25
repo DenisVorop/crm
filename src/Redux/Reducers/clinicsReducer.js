@@ -1,21 +1,21 @@
-import { usersAPI } from "../../API/api";
+import { clinicsAPI } from "../../API/api";
 
-const GET_USERS = 'GET_USERS';
+const GET_CLINICS_INFO = 'GET_CLINICS_INFO';
 
 //========================================================================================================================================================
 
 const initialState = {
-    usersData: [],
+    clinicsData: [],
 }
 
 //=============REDUCER===========================================================================================================================================
 
-const usersReducer = (state = initialState, action) => {
+const clinicsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case GET_USERS: {
+        case GET_CLINICS_INFO: {
             return {
                 ...state,
-                usersData: action.payload,
+                clinicsData: action.payload,
             }
         }
         default: {
@@ -26,20 +26,20 @@ const usersReducer = (state = initialState, action) => {
 
 //============ACTION CREATOR============================================================================================================================================
 
-export const getUsers = (payload) => {
+export const getClinicsInfo = (payload) => {
     return {
-        type: GET_USERS,
+        type: GET_CLINICS_INFO,
         payload,
     }
 }
 
 //============THUNKS============================================================================================================================================
 
-export const getUsersData = () => {
+export const getClinicsData = () => {
     return async (dispatch) => {
-        const response = await usersAPI.getAllUsers()
+        const response = await clinicsAPI.getAllClinics()
         if (response.status === 200) {
-            dispatch(getUsers(response.data));
+            dispatch(getClinicsInfo(response.data));
             console.log(response);
         }
     }
@@ -47,4 +47,4 @@ export const getUsersData = () => {
 
 //========================================================================================================================================================
 
-export default usersReducer;
+export default clinicsReducer;

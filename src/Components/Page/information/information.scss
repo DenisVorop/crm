@@ -8,11 +8,6 @@
     // .information__body
 
     &__body {
-        // display: flex;
-        // flex-direction: column;
-        // width: 365px;
-        // border: 2px solid #CCD6DA;
-        // border-radius: 8px;
         background-color: #fff;
     }
 
@@ -88,6 +83,12 @@
     padding: 14px;
     width: -webkit-fill-available;
 
+    // .last-information__left
+
+    &__left {
+        display: flex;
+    }
+
     // .last-information__doctor
 
     &__doctor {}
@@ -113,6 +114,7 @@
     &__item {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         font-size: 12px;
     }
 
@@ -125,7 +127,7 @@
     // .last-information__building
 
     &__building {
-        margin: 0px 125px 0px 0px;
+        // margin: 0px 125px 0px 0px;
     }
 
     // .last-information__see

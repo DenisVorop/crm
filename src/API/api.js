@@ -23,3 +23,9 @@ export const authAPI = {
         return instance.get('/admin')
     }
 }
+
+export const lastRecordsAPI = {
+    getAllLastRecords() {
+        return instance.get('/last-records')
+    }
+}
