@@ -7,10 +7,8 @@ import loop from '../../../assets/img/loop.svg'
 
 import DatePick from '../DatePicker/DatePicker'
 
-const Head = () => {
 
-    const [date, setDate] = React.useState();
-
+const Head = ({onSearchClick, inputRef}) => {
     return (
         <div className="filter__head">
             <div className="filter__date date-filter">
@@ -38,8 +36,8 @@ const Head = () => {
                 <div className="patient-filter__number">
                     <img src={loop} alt="loop" />
                     <input type="text" className="patient-filter__input"
-                        placeholder="Поиск пациентов на текущую дату" />
-                    <a href="#" className="patient-filter__search">Найти</a>
+                        placeholder="Поиск пациентов на текущую дату" ref={inputRef} />
+                    <a href="#" className="patient-filter__search" onClick={onSearchClick}>Найти</a>
                 </div>
             </div>
         </div>
