@@ -1,9 +1,10 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import info from '../../../assets/img/Info.svg';
 import Informations from '../information/Informations';
 
-const Record = ({ name, age, sex, status, lastRecordsData, time }) => {
+const Record = ({ name, age, sex, status, lastRecordsData, timeObj, id }) => {
 
     let statusStyle = {};
 
@@ -24,7 +25,11 @@ const Record = ({ name, age, sex, status, lastRecordsData, time }) => {
         <>
             <div className="records__row">
                 <div className="records__person">
-                    <div className="records__column time-column">{time}</div>
+                    <div className="records__column time-column">{timeObj.map(time => {
+                        if (time.id === id) {
+                            return time.time
+                        }
+                    })}</div>
                     <div className="records__column name-column">{name}</div>
                     <div className="records__column sex-column">{sex}, {age}</div>
                     <div className="records__column-item">

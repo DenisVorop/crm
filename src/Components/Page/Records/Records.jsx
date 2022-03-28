@@ -29,6 +29,7 @@ const Records = ({ activeUsers, onSearchClick }) => {
         <div className="records__body">
             {activeUsers.map((obj, index) => {
                 return <Record
+                    timeObj={timesData}
                     time={timesData[index].time}
                     key={`${obj}_${index}`}
                     {...obj}

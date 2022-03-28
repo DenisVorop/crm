@@ -12,8 +12,12 @@
     // .records__row
 
     &__row {
-        border-bottom: 1px solid #CCD6DA;
         margin: 0px 0px 15px 0px;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid #CCD6DA;
+        }
+
         >:not(:last-child) {
             margin: 0px 0px 16px 0px;
         }

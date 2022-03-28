@@ -11,11 +11,15 @@ import './filter.scss';
 const Filter = () => {
 
     const { usersData } = useSelector(({ usersReducer }) => usersReducer);
-    const [activeUsers, setActiveUsers] = React.useState(usersData);
+
+    const arrUsers = JSON.parse(JSON.stringify(usersData));
+    arrUsers.sort((a, b) => a.id > b.id ? 1 : -1);
+
+    const [activeUsers, setActiveUsers] = React.useState(arrUsers);
     const inputRef = React.useRef();
 
     const onSearchClick = () => {
-        const filteredUsers = usersData.filter(user => user.name.toLowerCase().includes(inputRef.current.value.toLowerCase()))
+        const filteredUsers = arrUsers.filter(user => user.name.toLowerCase().includes(inputRef.current.value.toLowerCase()))
         setActiveUsers(filteredUsers)
     }
 
