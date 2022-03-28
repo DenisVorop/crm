@@ -3,7 +3,7 @@ import { useState } from 'react';
 import info from '../../../assets/img/Info.svg';
 import Informations from '../information/Informations';
 
-const Record = ({ name, age, sex, status, lastRecordsData }) => {
+const Record = ({ name, age, sex, status, lastRecordsData, time }) => {
 
     let statusStyle = {};
 
@@ -24,7 +24,7 @@ const Record = ({ name, age, sex, status, lastRecordsData }) => {
         <>
             <div className="records__row">
                 <div className="records__person">
-                    <div className="records__column time-column">10:30</div>
+                    <div className="records__column time-column">{time}</div>
                     <div className="records__column name-column">{name}</div>
                     <div className="records__column sex-column">{sex}, {age}</div>
                     <div className="records__column-item">

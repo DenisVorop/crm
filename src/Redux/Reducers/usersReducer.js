@@ -1,11 +1,13 @@
 import { usersAPI } from "../../API/api";
 
 const GET_USERS = 'GET_USERS';
+const GET_TIMES = 'GET_TIMES';
 
 //========================================================================================================================================================
 
 const initialState = {
     usersData: [],
+    timesData: [],
 }
 
 //=============REDUCER===========================================================================================================================================
@@ -16,6 +18,12 @@ const usersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 usersData: action.payload,
+            }
+        }
+        case GET_TIMES: {
+            return {
+                ...state,
+                timesData: action.payload,
             }
         }
         default: {
@@ -33,6 +41,13 @@ export const getUsers = (payload) => {
     }
 }
 
+export const getTimes = (payload) => {
+    return {
+        type: GET_TIMES,
+        payload,
+    }
+}
+
 //============THUNKS============================================================================================================================================
 
 export const getUsersData = () => {
@@ -40,6 +55,16 @@ export const getUsersData = () => {
         const response = await usersAPI.getAllUsers()
         if (response.status === 200) {
             dispatch(getUsers(response.data));
+            console.log(response);
+        }
+    }
+}
+
+export const getTimesData = () => {
+    return async (dispatch) => {
+        const response = await usersAPI.getAllTimeUsers()
+        if (response.status === 200) {
+            dispatch(getTimes(response.data));
             console.log(response);
         }
     }

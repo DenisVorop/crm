@@ -1,5 +1,5 @@
+import React from 'react';
 import { Form, Formik } from 'formik';
-// import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 
@@ -14,8 +14,12 @@ const Login = () => {
     const dispatch = useDispatch();
 
     if (admin.login === login && admin.password === password) {
-        console.log('You are login!', isAuth)
-        return <Navigate to='/records' />
+        if (!!isAuth) {
+            console.log('You are login!', isAuth)
+            return <Navigate to='/records' />
+        } else {
+            console.log('Доступ временно ограничен');
+        }
     } else {
         console.log('Incorrect login or password!')
     }

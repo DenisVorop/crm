@@ -9,7 +9,11 @@ const instance = axios.create({
 export const usersAPI = {
     getAllUsers() {
         return instance.get('/users')
+        // return instance.get('/users&_sort=time&_order=desc')
     },
+    getAllTimeUsers() {
+        return instance.get('/today-records')
+    }
 }
 
 export const clinicsAPI = {
