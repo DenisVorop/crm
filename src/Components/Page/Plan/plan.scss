@@ -5,6 +5,9 @@
 
     &__container {
         padding: 15px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     // .plan__header
@@ -27,5 +30,33 @@
         font-weight: 700;
         font-size: 22px;
         color: #F3F7F9;
+    }
+}
+
+.new-plan {
+    display: flex;
+    align-items: center;
+
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 143%;
+
+    // .new-plan__pat
+
+    &__pat {
+        margin: 0px 10px 0px 0px;
+        color: #F3F7F9;
+        padding: 0 18px;
+        background: rgba(204, 214, 218, 0.3);
+        border-radius: 4px;
+    }
+
+    // .new-plan__rec
+
+    &__rec {
+        color: #012B39;
+        padding: 0 18px;
+        background: #CCD6DA;
+        border-radius: 4px;
     }
 }

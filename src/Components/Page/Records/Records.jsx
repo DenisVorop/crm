@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { getUsersData, getTimesData } from '../../../Redux/Reducers/usersReducer';
@@ -8,25 +8,26 @@ import Record from './Record';
 
 import './records.scss';
 
-const Records = ({ activeUsers, onSearchClick }) => {
+const Records = ({ activeUsers, onSearchClick, myRef, printTable }) => {
 
     const { lastRecordsData } = useSelector(({ lastRecordsReducer }) => lastRecordsReducer);
     const { timesData } = useSelector(({ usersReducer }) => usersReducer);
 
     const dispatch = useDispatch();
 
-    useEffect(() => {
+    React.useEffect(() => {
         dispatch(getUsersData());
         dispatch(getTimesData());
         dispatch(getLastRecordsData());
     }, []);
 
-    useEffect(() => {
+    React.useEffect(() => {
         setTimeout(onSearchClick, 0);
+        setTimeout(printTable, 0);
     }, [lastRecordsData]);
 
     return (
-        <div className="records__body">
+        <div className="records__body" ref={myRef}>
             {activeUsers.map((obj, index) => {
                 return <Record
                     timeObj={timesData}

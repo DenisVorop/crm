@@ -1,10 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class PrintFile extends Component {
+class PrintFile extends React.Component {
     render() {
-        return (
-            <div>hey</div>
-        )
+        let htmlRecords = null
+        let insertHtml = null
+
+        console.log('render')
+
+        if (this.props.recordsTable) {
+            htmlRecords = this.props.recordsTable.outerHTML
+            insertHtml = document.getElementById('print')
+            insertHtml.insertAdjacentHTML('afterbegin', htmlRecords)
+        }
+
+        return <div id='print' style={{padding: '30px 0px'}}></div>;
     }
 }
 

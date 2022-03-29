@@ -6,7 +6,7 @@ import './plan.scss';
 import print from '../../../assets/img/print.svg';
 import PrintFile from '../../PrintFile/PrintFile';
 
-const Plan = () => {
+const Plan = ({ recordsTable }) => {
 
     const componentRef = useRef();
 
@@ -23,14 +23,18 @@ const Plan = () => {
                             )
                         }}
                         content={() => componentRef.current}
-                        documentTitle='new document'
+                        documentTitle='Записи на текущую дату и время'
                         pageStyle='print'
                     />
                     <div className="plan__label">План амбулаторного приема</div>
                 </div>
+                <div className="plan__new new-plan">
+                    <div className="new-plan__pat"><a href='#'>Добавить нового пациента</a></div>
+                    <div className="new-plan__rec"><a href='#'>Создать запись</a></div>
+                </div>
             </div>
             <div style={{ display: "none" }}>
-                <PrintFile ref={componentRef} />
+                <PrintFile ref={componentRef} recordsTable={recordsTable} />
             </div>
         </div>
     )
