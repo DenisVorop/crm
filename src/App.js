@@ -17,8 +17,6 @@ function App() {
           element={<Login />} />
         <Route path='/records'
           element={<Page />} />
-        <Route path='/new-rec'
-          element={<NewRec />} />
       </Routes>
     </div>
   );

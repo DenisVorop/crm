@@ -6,7 +6,7 @@ import './plan.scss';
 import print from '../../../assets/img/print.svg';
 import PrintFile from '../../PrintFile/PrintFile';
 
-const Plan = ({ recordsTable, onToNew }) => {
+const Plan = ({ recordsTable, onToNew, onToPat }) => {
 
     const componentRef = useRef();
 
@@ -29,7 +29,7 @@ const Plan = ({ recordsTable, onToNew }) => {
                     <div className="plan__label">План амбулаторного приема</div>
                 </div>
                 <div className="plan__new new-plan">
-                    <div className="new-plan__pat" style={{cursor: 'pointer'}}>Добавить нового пациента</div>
+                    <div className="new-plan__pat" style={{cursor: 'pointer'}} onClick={onToPat}>Добавить нового пациента</div>
                     <div className="new-plan__rec" style={{cursor: 'pointer'}} onClick={onToNew}>Создать запись</div>
                 </div>
             </div>

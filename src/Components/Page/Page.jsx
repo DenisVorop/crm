@@ -3,6 +3,7 @@ import React from 'react';
 
 import Header from "../Header/Header";
 import Filter from './Filter/Filter';
+import NewPat from './NewPat/NewPat';
 import NewRec from './NewRec/NewRec';
 import Plan from './Plan/Plan';
 
@@ -24,33 +25,15 @@ const Page = () => {
         setNavToNew(1)
     }
 
-    switch (navToNew) {
-        case 1: {
-            return (
-                <>
-                    <Header />
-                    <Plan recordsTable={recordsTable} onToNew={onToNew} />
-                    <Filter takePrintRecord={takePrintRecord} />
-                </>
-            )
-        }
-        case 2: {
-            return (
-                <>
-                    <Header />
-                    <NewRec onToRec={onToRec} />
-                </>
-            )
-        }
+    const onToPat = () => {
+        setNavToNew(3)
     }
 
-    // return (
-    //     <>
-    //         <Header />
-    //         <Plan recordsTable={recordsTable} onToNew={onToNew} />
-    //         <Filter takePrintRecord={takePrintRecord} />
-    //     </>
-    // )
+    switch (navToNew) {
+        case 1: { return (<><Header /><Plan recordsTable={recordsTable} onToNew={onToNew} onToPat={onToPat} /><Filter takePrintRecord={takePrintRecord} /></>) }
+        case 2: { return (<><Header /><NewRec onToRec={onToRec} /></>) }
+        case 3: { return (<><Header /><NewPat onToRec={onToRec}/></>)}
+    }
 }
 
 export default Page;

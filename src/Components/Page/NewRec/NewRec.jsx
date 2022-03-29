@@ -98,6 +98,9 @@ const NewRec = ({ onToRec }) => {
                                 </div>
                             </div>
                         </div>
+                        <div className="new-rec__btn">
+                            <div className="new-rec__label" style={{cursor: 'pointer'}}>Создать новую запись</div>
+                        </div>
                     </div>
                 </div>
             </div>
