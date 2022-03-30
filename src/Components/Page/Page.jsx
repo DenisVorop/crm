@@ -33,6 +33,7 @@ const Page = () => {
         case 1: { return (<><Header /><Plan recordsTable={recordsTable} onToNew={onToNew} onToPat={onToPat} /><Filter takePrintRecord={takePrintRecord} /></>) }
         case 2: { return (<><Header /><NewRec onToRec={onToRec} /></>) }
         case 3: { return (<><Header /><NewPat onToRec={onToRec}/></>)}
+        default: {return }
     }
 }
 

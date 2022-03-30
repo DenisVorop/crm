@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
 
 import info from '../../../assets/img/Info.svg';
 import Informations from '../information/Informations';
