@@ -17,12 +17,12 @@ const Page = () => {
 
     const [navToNew, setNavToNew] = React.useState(1);
 
-    const onToNew = () => {
-        setNavToNew(2)
-    }
-
     const onToRec = () => {
         setNavToNew(1)
+    }
+
+    const onToNew = () => {
+        setNavToNew(2)
     }
 
     const onToPat = () => {

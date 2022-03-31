@@ -1,11 +1,20 @@
 import { Form, Formik } from 'formik';
+// import { useDispatch } from 'react-redux';
 
 import './newrec.scss'
 
 import arrowB from '../../../assets/img/arrow-b.svg'
 import arrowExit from '../../../assets/img/arrow-exit.svg'
 
+
 const NewRec = ({ onToRec }) => {
+
+    // const dispatch = useDispatch();
+
+    // const addRec = (values) => {
+    //     dispatch(actionCreate(values))   <-- import from reducer
+    // }
+
     return (
         <>
             <Formik
@@ -21,8 +30,8 @@ const NewRec = ({ onToRec }) => {
                 validateOnBlur={false}
                 validateOnChange={false}
                 onSubmit={(values) => {
-                    // getLoginValues(values)
                     console.log(values)
+                    // addRec(values)
                 }}
             // validationSchema={validationLogin}
             >
@@ -42,7 +51,7 @@ const NewRec = ({ onToRec }) => {
                             <div className="new-rec__container">
                                 <div className="new-rec__body">
                                     <div className="new-rec__items">
-                                        <div className="new-rec__item">
+                                        {/* <div className="new-rec__item">
                                             <div className="new-rec__label">Филиал</div>
                                             <div className="new-rec__vvod">
                                                 <div className="new-rec__input">
@@ -58,7 +67,7 @@ const NewRec = ({ onToRec }) => {
                                                     <img src={arrowB} alt='arrow-b' />
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
                                         <div className="new-rec__item">
                                             <div className="new-rec__label">Врач</div>
                                             <div className="new-rec__vvod">
@@ -132,7 +141,7 @@ const NewRec = ({ onToRec }) => {
                                             <div className="new-rec__vvod">
                                                 <div className="new-rec__input">
                                                     <input
-                                                        type="text"
+                                                        type="date"
                                                         placeholder='Выберите дату'
                                                         name='date'
                                                         onChange={handleChange}

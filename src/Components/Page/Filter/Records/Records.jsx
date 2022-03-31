@@ -1,30 +1,20 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-
-import { getUsersData, getTimesData } from '../../../../Redux/Reducers/usersReducer';
-import { getLastRecordsData } from '../../../../Redux/Reducers/lastRecordsReducer';
+import { useSelector } from 'react-redux';
 
 import Record from './Record/Record';
 
 import './records.scss';
+
 
 const Records = ({ activeUsers, onSearchClick, myRef, printTable }) => {
 
     const { lastRecordsData } = useSelector(({ lastRecordsReducer }) => lastRecordsReducer);
     const { timesData } = useSelector(({ usersReducer }) => usersReducer);
 
-    const dispatch = useDispatch();
-
     React.useEffect(() => {
-        dispatch(getUsersData());
-        dispatch(getTimesData());
-        dispatch(getLastRecordsData());
-    }, []);
-
-    React.useEffect(() => {
-        setTimeout(onSearchClick, 0);
-        setTimeout(printTable, 0);
-    }, [lastRecordsData]);
+        setTimeout(onSearchClick, 0)
+        setTimeout(printTable, 0)
+    }, [activeUsers]);
 
     const sortItems = [
         { name: 'Ожидает прием' },
@@ -39,7 +29,6 @@ const Records = ({ activeUsers, onSearchClick, myRef, printTable }) => {
                 return <Record
                     items={sortItems}
                     timeObj={timesData}
-                    time={timesData[index].time}
                     key={`${obj}_${index}`}
                     {...obj}
                     lastRecordsData={lastRecordsData}

@@ -7,7 +7,6 @@ import loop from '../../../../assets/img/loop.svg'
 
 import DatePick from './DatePicker/DatePicker'
 
-
 const Head = ({onSearchClick, inputRef}) => {
     return (
         <div className="filter__head">

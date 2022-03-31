@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import Popup from '../../../../Popup/Popup';
+import Popup from '../../../../../Common/Popup/Popup';
 import Last from './Information/LastsRecords/Last';
 import Information from './Information/information';
 

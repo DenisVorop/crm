@@ -56,26 +56,26 @@ const Login = () => {
                                 <div className="login__login login-login">
                                     <div className="login-login__label login-label">Имя пользователя</div>
                                     <input
-                                        className={touched.login && errors.login ? "login-login__input login-input input-error" : "login-login__input login-input"}
+                                        className={touched.login && errors.login ? "login-login__input login-input valid-input-error " : "login-login__input login-input"}
                                         placeholder='Введите имя пользователя'
                                         type="login"
                                         name='login'
                                         onChange={handleChange}
                                         onBlur={handleBlur}
                                     />
-                                    {touched.login && errors.login && <p className='login__error'>{errors.login}</p>}
+                                    {touched.login && errors.login && <p className='valid-text-error'>{errors.login}</p>}
                                 </div>
                                 <div className="login__password login-password">
                                     <div className="login-password__label login-label">Пароль</div>
                                     <input
-                                        className={touched.password && errors.password ? "login-password__input login-input input-error" : "login-password__input login-input"}
+                                        className={touched.password && errors.password ? "login-password__input login-input valid-input-error " : "login-password__input login-input"}
                                         placeholder='Введите пароль'
                                         type="login"
                                         name='password'
                                         onChange={handleChange}
                                         onBlur={handleBlur}
                                     />
-                                    {touched.password && errors.password && <p className='login__error'>{errors.password}</p>}
+                                    {touched.password && errors.password && <p className='valid-text-error'>{errors.password}</p>}
                                 </div>
                                 <button
                                     className="login__button button"

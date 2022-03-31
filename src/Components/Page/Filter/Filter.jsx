@@ -35,7 +35,7 @@ const Filter = ({takePrintRecord}) => {
             <div className="filter__container">
                 <Head onSearchClick={onSearchClick} inputRef={inputRef} />
                 <Patients />
-                <Records activeUsers={activeUsers} onSearchClick={onSearchClick} myRef={myRef} printTable={printTable}/>
+                <Records activeUsers={activeUsers} onSearchClick={onSearchClick} myRef={myRef} printTable={printTable} />
             </div>
         </div>
     )
