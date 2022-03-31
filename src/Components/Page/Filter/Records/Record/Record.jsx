@@ -1,7 +1,8 @@
 import React from 'react';
 
-import info from '../../../assets/img/Info.svg';
-import Informations from '../information/Informations';
+import info from '../../../../../assets/img/Info.svg';
+
+import Informations from './informations/Informations';
 
 const Record = ({ name, age, sex, status, lastRecordsData, timeObj, id, items }) => {
 

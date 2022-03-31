@@ -1,11 +1,11 @@
 import React from 'react'
 
-import calendar from '../../../assets/img/calendar.svg'
-import arrowLeft from '../../../assets/img/arrow-l.svg'
-import arrowRight from '../../../assets/img/arrow-r.svg'
-import loop from '../../../assets/img/loop.svg'
+import calendar from '../../../../assets/img/calendar.svg'
+import arrowLeft from '../../../../assets/img/arrow-l.svg'
+import arrowRight from '../../../../assets/img/arrow-r.svg'
+import loop from '../../../../assets/img/loop.svg'
 
-import DatePick from '../DatePicker/DatePicker'
+import DatePick from './DatePicker/DatePicker'
 
 
 const Head = ({onSearchClick, inputRef}) => {

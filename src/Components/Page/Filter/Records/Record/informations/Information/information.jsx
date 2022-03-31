@@ -1,4 +1,4 @@
-import eye from '../../../assets/img/eye.svg';
+import eye from '../../../../../../../assets/img/eye.svg';
 
 
 const Information = ({ setPopupActive, position, name_doctor, date_last_record, name_clinic }) => {

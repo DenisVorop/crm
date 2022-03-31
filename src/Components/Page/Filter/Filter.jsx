@@ -1,9 +1,9 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 
-import Head from "../Head/Head";
-import Patients from "../Patients/Patients";
-import Records from "../Records/Records";
+import Head from "./Head/Head";
+import Patients from "./Patients/Patients";
+import Records from "./Records/Records";
 
 import './filter.scss';
 

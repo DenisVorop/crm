@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import Popup from '../Popup/Popup';
-import Last from '../LastsRecords/Last';
-import Information from './information';
+import Popup from '../../../../Popup/Popup';
+import Last from './Information/LastsRecords/Last';
+import Information from './Information/information';
 
 // import copy from '../../../assets/img/copy.svg';
 

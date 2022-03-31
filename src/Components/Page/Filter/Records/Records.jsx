@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { getUsersData, getTimesData } from '../../../Redux/Reducers/usersReducer';
-import { getLastRecordsData } from '../../../Redux/Reducers/lastRecordsReducer';
+import { getUsersData, getTimesData } from '../../../../Redux/Reducers/usersReducer';
+import { getLastRecordsData } from '../../../../Redux/Reducers/lastRecordsReducer';
 
-import Record from './Record';
+import Record from './Record/Record';
 
 import './records.scss';
 
@@ -27,10 +27,10 @@ const Records = ({ activeUsers, onSearchClick, myRef, printTable }) => {
     }, [lastRecordsData]);
 
     const sortItems = [
+        { name: 'Ожидает прием' },
         { name: 'Прием идет' },
         { name: 'Прием завершен' },
         { name: 'Прием отменен' },
-        { name: 'Ожидает прием' },
     ];
 
     return (
