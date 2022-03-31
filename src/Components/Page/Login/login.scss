@@ -12,7 +12,6 @@
 
     &__body {
         width: 467px;
-        height: 300px;
         margin: 0 auto;
         background-color: #fff;
         padding: 20px 25px;
@@ -52,6 +51,16 @@
         background: #33B1CA;
         border-radius: 4px;
     }
+
+    // .login__error
+
+    &__error {
+        color: #FE4021;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+    }
+
 }
 
 .login-login {
@@ -90,4 +99,10 @@
     height: 36px;
     border: 1px solid #CCD6DA;
     border-radius: 4px;
+}
+
+// .input-error
+
+.input-error {
+    border: 1px solid #FE4021;
 }

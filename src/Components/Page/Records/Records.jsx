@@ -26,10 +26,18 @@ const Records = ({ activeUsers, onSearchClick, myRef, printTable }) => {
         setTimeout(printTable, 0);
     }, [lastRecordsData]);
 
+    const sortItems = [
+        { name: 'Прием идет' },
+        { name: 'Прием завершен' },
+        { name: 'Прием отменен' },
+        { name: 'Ожидает прием' },
+    ];
+
     return (
         <div className="records__body" ref={myRef}>
             {activeUsers.map((obj, index) => {
                 return <Record
+                    items={sortItems}
                     timeObj={timesData}
                     time={timesData[index].time}
                     key={`${obj}_${index}`}
