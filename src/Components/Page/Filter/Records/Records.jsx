@@ -6,7 +6,7 @@ import Record from './Record/Record';
 import './records.scss';
 
 
-const Records = ({ activeUsers, onSearchClick, myRef, printTable }) => {
+const Records = ({ activeUsers, onSearchClick, myRef, printTable, usersData, getCardNum }) => {
 
     const { lastRecordsData } = useSelector(({ lastRecordsReducer }) => lastRecordsReducer);
     const { timesData } = useSelector(({ usersReducer }) => usersReducer);
@@ -14,7 +14,7 @@ const Records = ({ activeUsers, onSearchClick, myRef, printTable }) => {
     React.useEffect(() => {
         setTimeout(onSearchClick, 0)
         setTimeout(printTable, 0)
-    }, [activeUsers]);
+    }, [usersData]);
 
     const sortItems = [
         { name: 'Ожидает прием' },
@@ -32,6 +32,7 @@ const Records = ({ activeUsers, onSearchClick, myRef, printTable }) => {
                     key={`${obj}_${index}`}
                     {...obj}
                     lastRecordsData={lastRecordsData}
+                    getCardNum={getCardNum}
                 />
             })}
         </div>

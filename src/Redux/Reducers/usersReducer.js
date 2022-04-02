@@ -2,7 +2,8 @@ import { usersAPI } from "../../API/api";
 
 const GET_USERS = 'GET_USERS';
 const GET_TIMES = 'GET_TIMES';
-const ADD_PAT = 'ADD_PAT';
+// const ADD_PAT = 'ADD_PAT';
+const ADD_REC = 'ADD_REC';
 
 //========================================================================================================================================================
 
@@ -27,18 +28,33 @@ const usersReducer = (state = initialState, action) => {
                 timesData: action.payload,
             }
         }
-        case ADD_PAT: {
-            const newPatient = {
-                id: 3,
-                name: action.payload.surname + ' ' + action.payload.name + ' ' + action.payload.patronymic,
+        // case ADD_PAT: {
+        //     const newPatient = {
+        //         id: 3,
+        //         name: action.payload.surname + ' ' + action.payload.name + ' ' + action.payload.patronymic,
+        //         sex: 'M',
+        //         age: '20',
+        //         status: 'Ожидает прием',
+        //         time: '14:00',
+        //     };
+        //     return {
+        //         ...state,
+        //         usersData: [...state.usersData, newPatient],
+        //     };
+        // }
+        case ADD_REC: {
+            const newRecord = {
+                id: 9,
+                name: action.payload.pat_name,
                 sex: 'M',
                 age: '20',
-                status: 'Ожидает прием',
-                time: '14:00',
+                card_num: action.payload.card_num,
+                status: action.payload.type,
+                time: action.payload.time,
             };
             return {
                 ...state,
-                usersData: [...state.usersData, newPatient],
+                usersData: [...state.usersData, newRecord],
             };
         }
         default: {
@@ -63,9 +79,16 @@ export const getTimes = (payload) => {
     }
 }
 
-export const addNewPatient = (payload) => {
+// export const addNewPatient = (payload) => {
+//     return ({
+//         type: ADD_PAT,
+//         payload,
+//     })
+// }
+
+export const addNewRecord = (payload) => {
     return ({
-        type: ADD_PAT,
+        type: ADD_REC,
         payload,
     })
 }

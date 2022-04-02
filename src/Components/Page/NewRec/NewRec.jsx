@@ -1,19 +1,21 @@
 import { Form, Formik } from 'formik';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import './newrec.scss'
 
 import arrowB from '../../../assets/img/arrow-b.svg'
 import arrowExit from '../../../assets/img/arrow-exit.svg'
 
+import { addNewRecord } from '../../../Redux/Reducers/usersReducer';
 
 const NewRec = ({ onToRec }) => {
 
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-    // const addRec = (values) => {
-    //     dispatch(actionCreate(values))   <-- import from reducer
-    // }
+    const onAddRec = (values) => {
+        onToRec()
+        dispatch(addNewRecord(values))
+    }
 
     return (
         <>
@@ -25,13 +27,14 @@ const NewRec = ({ onToRec }) => {
                     pat_name: '',
                     card_num: '',
                     date: '',
-                    type: '',
+                    type: 'Ожидает прием',
+                    time: '',
                 }}
                 validateOnBlur={false}
                 validateOnChange={false}
                 onSubmit={(values) => {
                     console.log(values)
-                    // addRec(values)
+                    onAddRec(values)
                 }}
             // validationSchema={validationLogin}
             >
@@ -39,8 +42,8 @@ const NewRec = ({ onToRec }) => {
                     <Form>
                         <div className="plan">
                             <div className="plan__container">
-                                <div className="plan__header" style={{ padding: '3px 0px' }}>
-                                    <div href='#' className="plan__print" style={{ cursor: 'pointer' }} onClick={onToRec} >
+                                <div className="plan__header plan__new" style={{ padding: '3px 0px', cursor: 'pointer'  }} onClick={onToRec}>
+                                    <div href='#' className="plan__print" >
                                         <img src={arrowExit} alt="arrow-l" />
                                     </div>
                                     <div className="plan__label">Создание новой записи</div>
@@ -103,7 +106,7 @@ const NewRec = ({ onToRec }) => {
                                             </div>
                                         </div>
                                         <div className="new-rec__item">
-                                            <div className="new-rec__label">Пациент</div>
+                                            <div className="new-rec__label">ФИО пациента</div>
                                             <div className="new-rec__vvod">
                                                 <div className="new-rec__input">
                                                     <input
@@ -137,6 +140,23 @@ const NewRec = ({ onToRec }) => {
                                             </div>
                                         </div>
                                         <div className="new-rec__item">
+                                            <div className="new-rec__label">Время</div>
+                                            <div className="new-rec__vvod">
+                                                <div className="new-rec__input">
+                                                    <input
+                                                        type="time"
+                                                        placeholder='Выберите время'
+                                                        name='time'
+                                                        onChange={handleChange}
+                                                        onBlur={handleBlur}
+                                                    />
+                                                </div>
+                                                <div className="new-rec__img">
+                                                    <img src={arrowB} alt='arrow-b' />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* <div className="new-rec__item">
                                             <div className="new-rec__label">Дата</div>
                                             <div className="new-rec__vvod">
                                                 <div className="new-rec__input">
@@ -152,7 +172,7 @@ const NewRec = ({ onToRec }) => {
                                                     <img src={arrowB} alt='arrow-b' />
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
                                         <div className="new-rec__item">
                                             <div className="new-rec__label">Тип записи</div>
                                             <div className="new-rec__vvod">
@@ -161,6 +181,7 @@ const NewRec = ({ onToRec }) => {
                                                         type="text"
                                                         placeholder='Выберите тип записи'
                                                         name='type'
+                                                        value='Ожидает прием'
                                                         onChange={handleChange}
                                                         onBlur={handleBlur}
                                                     />

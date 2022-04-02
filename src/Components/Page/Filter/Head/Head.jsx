@@ -7,7 +7,7 @@ import loop from '../../../../assets/img/loop.svg'
 
 import DatePick from './DatePicker/DatePicker'
 
-const Head = ({onSearchClick, inputRef}) => {
+const Head = ({onSearchClick, inputRef, onToggleCheck, num}) => {
     return (
         <div className="filter__head">
             <div className="filter__date date-filter">
@@ -30,12 +30,13 @@ const Head = ({onSearchClick, inputRef}) => {
             <div className="filter__patient patient-filter">
                 <div className="patient-filter__card">
                     <label className="patient-filter__label" htmlFor="check1">Номер карты</label>
-                    <input type="checkbox" className="patient-filter__checkbox" id="check1" />
+                    <input type="checkbox" className="patient-filter__checkbox" id="check1" onClick={onToggleCheck}/>
                 </div>
                 <div className="patient-filter__number">
                     <img src={loop} alt="loop" />
                     <input type="text" className="patient-filter__input"
-                        placeholder="Поиск пациентов на текущую дату" ref={inputRef} />
+                        // placeholder="Поиск пациентов на текущую дату" ref={num ? cardRef : nameRef} />
+                        placeholder={!num ? 'Введите ФИО пациента' : 'Введите номер карты пациента'} ref={inputRef} />
                     <a href="#" className="patient-filter__search" onClick={onSearchClick}>Найти</a>
                 </div>
             </div>

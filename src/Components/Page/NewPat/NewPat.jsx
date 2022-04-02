@@ -1,21 +1,21 @@
 import { Form, Formik } from 'formik';
 import * as yup from 'yup';
 
-import { addNewPatient } from '../../../Redux/Reducers/usersReducer';
+// import { addNewPatient } from '../../../Redux/Reducers/usersReducer';
 
 import './newpat.scss'
 
 import arrowExit from '../../../assets/img/arrow-exit.svg'
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 
 const NewPat = ({ onToRec }) => {
 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
-    const onAddPatient = (values) => {
-        onToRec()
-        dispatch(addNewPatient(values))
-    }
+    // const onAddPatient = (values) => {
+    //     onToRec()
+    //     dispatch(addNewPatient(values))
+    // }
 
     const phoneRegExp = /^\+?[78][-\(]?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$/
 
@@ -48,7 +48,7 @@ const NewPat = ({ onToRec }) => {
                 validateOnChange={false}
                 onSubmit={(values) => {
                     console.log(values)
-                    onAddPatient(values)
+                    // onAddPatient(values)
                 }}
                 validationSchema={validationNewPat}
             >
@@ -56,8 +56,8 @@ const NewPat = ({ onToRec }) => {
                     <Form>
                         <div className="plan">
                             <div className="plan__container">
-                                <div className="plan__header" style={{ padding: '3px 0px' }}>
-                                    <div href='#' className="plan__print" style={{ cursor: 'pointer' }} onClick={onToRec}>
+                                <div className="plan__header plan__new" style={{ padding: '3px 0px', cursor: 'pointer'  }} onClick={onToRec}>
+                                    <div href='#' className="plan__print">
                                         <img src={arrowExit} alt="arrow-l" />
                                     </div>
                                     <div className="plan__label">Создание новой карты пациента</div>

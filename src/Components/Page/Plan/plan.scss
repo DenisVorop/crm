@@ -17,6 +17,20 @@
         align-items: center;
     }
 
+    &__new {
+        img {
+            transform: scale(1);
+            transition: all 0.3s ease 0s;
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.2);
+                transition: all 0.3s ease 0s;
+            }
+        }
+    }
+
     // .plan__print
 
     &__print {
