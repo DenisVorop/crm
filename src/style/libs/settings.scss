@@ -30,3 +30,12 @@ $pc: em($containerWidth); // ПК, ноутбуки, некоторые план
 $tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
 $mobile: em(767.98); // Телефоны L
 $mobileSmall: em(479.98); // Телефоны S
+
+*::placeholder {
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    color: #B7C6CB;
+}

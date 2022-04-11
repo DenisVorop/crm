@@ -1,8 +1,7 @@
-// import { authAPI } from "../../API/api";
-
 const GET_ADMIN = 'GET_ADMIN';
+const LOGOUT = 'LOGOUT';
 
-//========================================================================================================================================================
+
 
 const initialState = {
     login: 'admin',
@@ -11,7 +10,7 @@ const initialState = {
     isAuth: false,
 }
 
-//=============REDUCER===========================================================================================================================================
+
 
 const authReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -22,13 +21,19 @@ const authReducer = (state = initialState, action) => {
                 isAuth: true,
             }
         }
+        case LOGOUT: {
+            return {
+                ...state,
+                isAuth: false,
+            }
+        }
         default: {
             return state;
         }
     }
 }
 
-//============ACTION CREATOR============================================================================================================================================
+
 
 export const getAdmin = (payload) => {
     return {
@@ -37,18 +42,14 @@ export const getAdmin = (payload) => {
     }
 }
 
-//============THUNKS============================================================================================================================================
 
-// export const getAuth = () => {
-//     return async (dispatch) => {
-//         const response = await authAPI.getAuthAdmin()
-//         if (response.status === 200) {
-//             dispatch(getAdmin(response.data));
-//             console.log(response);
-//         }
-//     }
-// }
 
-//========================================================================================================================================================
+export const logout = () => {
+    return {
+        type: LOGOUT
+    }
+}
+
+
 
 export default authReducer;

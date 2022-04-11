@@ -5,13 +5,11 @@ class PrintFile extends React.Component {
         let htmlRecords = null
         let insertHtml = null
 
-        console.log('render')
-
-        // if (this.props.recordsTable) {
-        //     htmlRecords = this.props.recordsTable.outerHTML
-        //     insertHtml = document.getElementById('print')
-        //     insertHtml.insertAdjacentHTML('afterbegin', htmlRecords)
-        // }
+        if (this.props.recordsTable) {
+            htmlRecords = this.props.recordsTable.outerHTML
+            insertHtml = document.getElementById('print')
+            insertHtml.insertAdjacentHTML('afterbegin', htmlRecords)
+        }
 
         return <div id='print' style={{padding: '30px 0px'}}></div>;
     }

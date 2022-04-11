@@ -5,14 +5,14 @@ const GET_TIMES = 'GET_TIMES';
 // const ADD_PAT = 'ADD_PAT';
 const ADD_REC = 'ADD_REC';
 
-//========================================================================================================================================================
+
 
 const initialState = {
     usersData: [],
     timesData: [],
 }
 
-//=============REDUCER===========================================================================================================================================
+
 
 const usersReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -29,7 +29,7 @@ const usersReducer = (state = initialState, action) => {
             }
         }
         // case ADD_PAT: {
-        //     const newPatient = {
+        //     const NewPatientient = {
         //         id: 3,
         //         name: action.payload.surname + ' ' + action.payload.name + ' ' + action.payload.patronymic,
         //         sex: 'M',
@@ -39,12 +39,13 @@ const usersReducer = (state = initialState, action) => {
         //     };
         //     return {
         //         ...state,
-        //         usersData: [...state.usersData, newPatient],
+        //         usersData: [...state.usersData, NewPatientient],
         //     };
         // }
         case ADD_REC: {
-            const newRecord = {
-                id: 9,
+            const NewRecordord = {
+                id: 16,
+                time_id: 5,
                 name: action.payload.pat_name,
                 sex: 'M',
                 age: '20',
@@ -54,7 +55,7 @@ const usersReducer = (state = initialState, action) => {
             };
             return {
                 ...state,
-                usersData: [...state.usersData, newRecord],
+                usersData: [...state.usersData, NewRecordord],
             };
         }
         default: {
@@ -63,7 +64,7 @@ const usersReducer = (state = initialState, action) => {
     }
 }
 
-//============ACTION CREATOR============================================================================================================================================
+
 
 export const getUsers = (payload) => {
     return {
@@ -79,7 +80,7 @@ export const getTimes = (payload) => {
     }
 }
 
-// export const addNewPatient = (payload) => {
+// export const addNewPatientient = (payload) => {
 //     return ({
 //         type: ADD_PAT,
 //         payload,
@@ -93,7 +94,7 @@ export const addNewRecord = (payload) => {
     })
 }
 
-//============THUNKS============================================================================================================================================
+
 
 export const getUsersData = () => {
     return async (dispatch) => {
@@ -115,6 +116,6 @@ export const getTimesData = () => {
     }
 }
 
-//========================================================================================================================================================
+
 
 export default usersReducer;
