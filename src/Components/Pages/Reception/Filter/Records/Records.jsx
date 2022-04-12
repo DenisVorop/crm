@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import EmptySearch from '../../../../Common/EmptySearch/EmptySearch';
 
 import Record from './Record/Record';
 
@@ -25,6 +26,10 @@ const Records = ({ activeUsers, onSearchClick, myRef, printTable, usersData, get
                     getCardNum={getCardNum}
                 />
             })}
+            {activeUsers.length === 0
+            ? <EmptySearch />
+            : null
+            }
         </div>
     )
 }

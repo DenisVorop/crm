@@ -9,7 +9,8 @@ $line-height: 1; // Указать свой
 $weight: 400; // жирнотааа
 
 // Основные цвета
-$mainColor: #061519;; // Цвет шрифта по умолчанию
+$mainColor: #061519;
+; // Цвет шрифта по умолчанию
 
 // НАСТРОЙКИ ===============================================================================================================================================================================================================================================================================================
 // Минимальная ширина страницы
@@ -23,7 +24,7 @@ $maxWidthContainer: 1280;
 $containerPadding: 0;
 
 // Ширина срабатывания первого брейкпоинта
-$containerWidth: $maxWidthContainer + $containerPadding;
+$containerWidth: $maxWidthContainer+$containerPadding;
 
 // Брейк-поинты
 $pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
@@ -38,4 +39,48 @@ $mobileSmall: em(479.98); // Телефоны S
     font-size: 18px;
     line-height: 25px;
     color: #B7C6CB;
+}
+
+input,
+select {
+    font-family: 'Nunito Sans' !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 18px !important;
+    line-height: 130% !important;
+    color: #012B39 !important;
+}
+
+input:focus,
+select:focus {
+    outline: 1px solid #0076A3;
+    border: none;
+}
+
+
+.time-select {
+    background: rgba(203, 229, 240, 0.3);
+    border: 1px solid #B7C6CB;
+    border-radius: 4px;
+    width: 366px;
+    height: 30px;
+    padding: 0px 0px 0px 6px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="number"]:hover,
+input[type="number"]:focus {
+    -moz-appearance: number-input;
 }

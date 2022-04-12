@@ -2,7 +2,7 @@ import React from 'react'
 import { useLocation } from 'react-router-dom';
 
 
-const Input = ({ label, inputRef, onChangeInput, placeholder, styleInput }) => {
+const Input = ({ label, inputRef, onChangeInput, placeholder, styleInput, type }) => {
 
     const [changedPath, setChangedPath] = React.useState(false)
     const location = useLocation();
@@ -15,7 +15,7 @@ const Input = ({ label, inputRef, onChangeInput, placeholder, styleInput }) => {
 
     return (
         <input
-            type="text"
+            type={type}
             placeholder={placeholder}
             style={styleInput}
             ref={inputRef}

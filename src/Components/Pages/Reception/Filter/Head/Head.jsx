@@ -8,7 +8,7 @@ import DatePick from './DatePicker/DatePicker'
 import Search from '../../../../Common/Search/Search'
 import Input from '../../../../Common/Inputs/Input'
 
-const Head = ({ onSearchClick, inputRef, onToggleCheck, num, receptionRef }) => {
+const Head = ({ onSearchClick, onToggleCheck, num, receptionRef }) => {
     return (
         <div className="filter__head">
             <div className="filter__date date-filter">

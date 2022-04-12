@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Filter from './Filter/Filter';
-import Plan from './Filter/Plan/Plan';
+import Plan from '../../Common/Plan/Plan';
 
 const Page = ({ getCardNum }) => {
 
@@ -13,7 +13,7 @@ const Page = ({ getCardNum }) => {
 
     return (
         <>
-            <Plan recordsTable={recordsTable} />
+            <Plan recordsTable={recordsTable} label='План амбулаторного приема'/>
             <Filter
                 takePrintRecord={takePrintRecord}
                 getCardNum={getCardNum}

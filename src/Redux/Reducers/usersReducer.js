@@ -8,6 +8,7 @@ const ADD_REC = 'ADD_REC';
 
 
 const initialState = {
+    oldUsersData: [],
     usersData: [],
     timesData: [],
 }
@@ -19,7 +20,8 @@ const usersReducer = (state = initialState, action) => {
         case GET_USERS: {
             return {
                 ...state,
-                usersData: action.payload,
+                oldUsersData: action.payload,
+                usersData: action.payload
             }
         }
         case GET_TIMES: {
@@ -28,6 +30,12 @@ const usersReducer = (state = initialState, action) => {
                 timesData: action.payload,
             }
         }
+        // case GET_TIMES: {
+        //     return {
+        //         ...state,
+        //         timesData: action.payload,
+        //     }
+        // }
         // case ADD_PAT: {
         //     const NewPatientient = {
         //         id: 3,
@@ -36,22 +44,112 @@ const usersReducer = (state = initialState, action) => {
         //         age: '20',
         //         status: 'Ожидает прием',
         //         time: '14:00',
+        //         last_name: action.payload.surname,
+        //         first_name: action.payload.name,
+        //         patronymic: action.payload.patronymic,
+        //         birth: '12.12.1212',
+        //         marital_status: 'Не женат',
+        //         reg_addres: 'huevo kukuevo',
+        //         fact_addres: 'kukuevo huevo',
+        //         phone: '88005553535',
+        //         first_record: '23.23.2323',
+        //         last_record: '25.25.2525',
+        //         card_info: {
+
+        //         },
+        //         last_records: {
+
+        //         }
         //     };
         //     return {
         //         ...state,
-        //         usersData: [...state.usersData, NewPatientient],
+        //         oldUsersData: [...state.oldUsersData, NewPatientient],
         //     };
         // }
         case ADD_REC: {
             const NewRecordord = {
                 id: 16,
-                time_id: 5,
+                time_id: Number(action.payload.time),
                 name: action.payload.pat_name,
                 sex: 'M',
                 age: '20',
                 card_num: action.payload.card_num,
-                status: action.payload.type,
                 time: action.payload.time,
+                status: 'Ожидает прием',
+                last_name: 'Денис',
+                first_name: 'Воропаев',
+                patronymic: 'Юрьевич',
+                birth: '12.12.1212',
+                marital_status: 'Не женат',
+                reg_addres: 'huevo kukuevo',
+                fact_addres: 'kukuevo huevo',
+                phone: '88005553535',
+                first_record: '23.23.2323',
+                last_record: '25.25.2525',
+                card_info: [
+                    {
+                        system: "Общий осмотр",
+                        label_sub: "Субъективно",
+                        label_ob: "Объективно",
+                        symptoms_sub: { 1: "" },
+                        symptoms_ob: { 1: "", 2: "", 3: "", 4: "", 5: "", 6: "", 7: "" }
+                    },
+                    {
+                        system: "Система органов дыхания",
+                        label_sub: "Субъективно",
+                        label_ob: "Объективно",
+                        symptoms_sub: { 1: "", 2: "", 3: "", 4: "", 5: "", 6: "", 7: "", 8: "", 9: "", 10: "", 11: "", 12: "", 13: "", 14: "" },
+                        symptoms_ob: { 1: "", 2: "", 3: "", 4: "", 5: "", 6: "" }
+                    },
+                    {
+                        system: "Сердечно-сосудистая система",
+                        label_sub: "Субъективно",
+                        label_ob: "Объективно",
+                        symptoms_sub: { 1: "", 2: "", 3: "", 4: "", 5: "", 6: "", 7: "" },
+                        symptoms_ob: { 1: "", 2: "", 3: "", 4: "", 5: "", 6: "" }
+                    },
+                    {
+                        system: "Система органов пищеварения",
+                        label_sub: "Субъективно",
+                        label_ob: "Объективно",
+                        symptoms_sub: { 1: "", 2: "", 3: "", 4: "", 5: "" },
+                        symptoms_ob: { 1: "", 2: "", 3: "", 4: "" }
+                    },
+                    {
+                        system: "Мочеполовая система",
+                        label_sub: "Субъективно",
+                        label_ob: "Объективно",
+                        symptoms_sub: { 1: "", 2: "", 3: "", 4: "" },
+                        symptoms_ob: { 1: "" }
+                    },
+                    {
+                        system: "Нервная система и органы чувств",
+                        label_sub: "Субъективно",
+                        label_ob: "Объективно",
+                        symptoms_sub: { 1: "", 2: "", 3: "" },
+                        symptoms_ob: {}
+                    }
+                ],
+                last_records: [
+                    {
+                        position: "Медицинская сестра (медбрат) участковая",
+                        name_doctor: "Иванова Г.Ю.",
+                        name_clinic: "Филиал №1",
+                        date_last_record: "14.02.2021"
+                    },
+                    {
+                        position: "Офтальмолог",
+                        name_doctor: "Рыжкова Г.Ю.",
+                        name_clinic: "Филиал №2",
+                        date_last_record: "22.12.2020"
+                    },
+                    {
+                        position: "Хирург",
+                        name_doctor: "Петров Г.Ю.",
+                        name_clinic: "Филиал №1",
+                        date_last_record: "07.02.2022"
+                    }
+                ]
             };
             return {
                 ...state,
@@ -96,7 +194,7 @@ export const addNewRecord = (payload) => {
 
 
 
-export const getUsersData = () => {
+export const getoldUsersData = () => {
     return async (dispatch) => {
         const response = await usersAPI.getAllUsers()
         if (response.status === 200) {

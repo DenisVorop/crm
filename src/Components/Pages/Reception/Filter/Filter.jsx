@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 
 import Head from "./Head/Head";
-import Patients from "./Patients/Patients";
+import Patients from "../../../Common/Patients/Patients";
 import Records from "./Records/Records";
 
 import './filter.scss';
@@ -12,7 +12,7 @@ const Filter = ({ takePrintRecord, getCardNum }) => {
     const { usersData } = useSelector(({ usersReducer }) => usersReducer);
 
     const arrUsers = JSON.parse(JSON.stringify(usersData));
-    arrUsers.sort((a, b) => a.id > b.id ? 1 : -1);
+    arrUsers.sort((a, b) => a.time_id > b.time_id ? 1 : -1);
 
     const [activeUsers, setActiveUsers] = React.useState(arrUsers);
     const [num, setNum] = React.useState(false)
@@ -49,7 +49,7 @@ const Filter = ({ takePrintRecord, getCardNum }) => {
                     onToggleCheck={onToggleCheck}
                     num={num}
                 />
-                <Patients />
+                <Patients stylePatients={{gridTemplateColumns: '0.5fr 2fr 1fr 1fr 0.5fr'}}/>
                 <Records
                     activeUsers={activeUsers}
                     onSearchClick={onSearchClick}

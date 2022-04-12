@@ -2,16 +2,17 @@ import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
+import Header from './Components/Header/Header';
 import Login from "./Components/Pages/Login/Login";
 import Page from "./Components/Pages/Reception/Page";
-import Card from './Components/Common/Card/Card';
-import NewPatient from './Components/Pages/Reception/NewPatient/NewPatient';
-import NewRecord from './Components/Pages/Reception/NewRecord/NewRecord';
-import Notfound from './Components/Pages/Reception/NotFound/NotFound';
-import Header from './Components/Header/Header';
+import NewPatient from './Components/Pages/NewPatient/NewPatient';
+import NewRecord from './Components/Pages/NewRecord/NewRecord';
 import AllCards from './Components/Pages/PatientsCards/AllCards';
+import Notfound from './Components/Pages/NotFound/NotFound';
+import Card from './Components/Common/Card/Card';
 
-import { getUsersData, getTimesData } from './Redux/Reducers/usersReducer';
+
+import { getoldUsersData, getTimesData } from './Redux/Reducers/usersReducer';
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    dispatch(getUsersData());
+    dispatch(getoldUsersData());
     dispatch(getTimesData());
   }, []);
 

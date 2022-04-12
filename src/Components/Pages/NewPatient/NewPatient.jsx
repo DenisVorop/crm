@@ -6,15 +6,13 @@ import { useNavigate } from 'react-router-dom';
 
 import './newpatient.scss'
 
-import arrowExit from '../../../../assets/img/arrow-exit.svg'
+import Plan from '../../Common/Plan/Plan';
 // import { useDispatch } from 'react-redux';
 
 const NewPatient = () => {
 
     // const dispatch = useDispatch();
     const navigate = useNavigate();
-
-    const goBack = () => navigate(-1);
 
     // const onAddPatient = (values) => {
     // dispatch(addNewPatientient(values))
@@ -58,18 +56,7 @@ const NewPatient = () => {
             >
                 {({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty }) => (
                     <Form>
-                        <div className="plan">
-                            <div className="plan__container">
-                                <div onClick={goBack}>
-                                    <div className="plan__header plan__new" style={{ padding: '3px 0px', cursor: 'pointer' }}>
-                                        <div href='#' className="plan__print">
-                                            <img src={arrowExit} alt="arrow-l" />
-                                        </div>
-                                        <div className="plan__label">Создание новой карты пациента</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <Plan label='Создание новой карты пациента' />
                         <div className='new-rec'>
                             <div className="new-rec__container" style={{ paddingBottom: '60px' }}>
                                 <div className="new-rec__body" style={{ width: 'auto', padding: '30px 78px 45px 78px' }}>
