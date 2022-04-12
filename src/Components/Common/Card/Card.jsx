@@ -1,14 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import './card.scss'
 
 import arrowExit from '../../../assets/img/arrow-exit.svg'
 import CardRow from './CardRow/CardRow';
 import CardLeft from './CardLeft/CardLeft';
+import Information from '../../Pages/Reception/Filter/Records/Record/informations/Information/information';
 
 
 const Card = ({ cardInfo }) => {
+
+    const navigate = useNavigate();
+    const goBack = () => navigate(-1);
 
     const labels = ['Фамилия', 'Имя', 'Отчество', 'Пол', 'День рождения', 'Семейное положение', 'Адрес прописки', 'Адрес проживания', 'Телефон', 'Дата первого посещения', 'Дата последнего посещения']
 
@@ -16,14 +20,14 @@ const Card = ({ cardInfo }) => {
         <>
             <div className="plan">
                 <div className="plan__container">
-                    <Link to='/reception'>
+                    <div onClick={goBack}>
                         <div className="plan__header plan__new" style={{ padding: '3px 0px', cursor: 'pointer' }}>
                             <div href='#' className="plan__print" >
                                 <img src={arrowExit} alt="arrow-l" />
                             </div>
                             <div className="plan__label">Карта пациента</div>
                         </div>
-                    </Link>
+                    </div>
                 </div>
             </div>
             <div className="card">
@@ -61,48 +65,15 @@ const Card = ({ cardInfo }) => {
                             <div className="last-records-card__body">
                                 <div className="last-records-card__title">Последние приемы</div>
                                 <div className="last-records-card__records">
-                                    <div className="last-records-card__record">
-                                        <div className="information__last last-information">
-                                            <div className="last-information__doctor">
-                                                <div className="last-information__label">Медицинская сестра (медбрат) участковая</div>
-                                                <div className="last-information__name">Иванова Г.Ю.</div>
+                                    {cardInfo[12].last_records.map((obj, index) => {
+                                        return (
+                                            <div className="last-records-card__record" key={`${obj}_${index}`}>
+                                                <Information
+                                                    {...obj}
+                                                />
                                             </div>
-                                            <div className="last-information__item">
-                                                <div className="last-information__left">
-                                                    <div className="last-information__date">14.02.2021</div>
-                                                    <div className="last-information__building">Название филиала №2</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="last-records-card__record">
-                                        <div className="information__last last-information">
-                                            <div className="last-information__doctor">
-                                                <div className="last-information__label">Медицинская сестра (медбрат) участковая</div>
-                                                <div className="last-information__name">Иванова Г.Ю.</div>
-                                            </div>
-                                            <div className="last-information__item">
-                                                <div className="last-information__left">
-                                                    <div className="last-information__date">14.02.2021</div>
-                                                    <div className="last-information__building">Название филиала №2</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="last-records-card__record">
-                                        <div className="information__last last-information">
-                                            <div className="last-information__doctor">
-                                                <div className="last-information__label">Медицинская сестра (медбрат) участковая</div>
-                                                <div className="last-information__name">Иванова Г.Ю.</div>
-                                            </div>
-                                            <div className="last-information__item">
-                                                <div className="last-information__left">
-                                                    <div className="last-information__date">14.02.2021</div>
-                                                    <div className="last-information__building">Название филиала №2</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        )
+                                    })}
                                 </div>
                             </div>
                         </div>

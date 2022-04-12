@@ -21,6 +21,13 @@
     &__column {
         font-size: 14px;
         color: #B7C6CB;
+
+        &:last-child {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            width: auto;
+        }
     }
 }
 

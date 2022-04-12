@@ -11,7 +11,7 @@ const Informations = ({ last_records }) => {
     const [popupActive, setPopupActive] = useState(false);
 
     if (last_records.length === 0) {
-        last_records = [{position: 'Нет данных'}]
+        last_records = [{ position: 'Нет данных' }]
         console.log(last_records)
     }
 
@@ -27,7 +27,8 @@ const Informations = ({ last_records }) => {
                                     <Information
                                         key={`${obj}_${index}`}
                                         setPopupActive={setPopupActive}
-                                        {...obj} />
+                                        {...obj}
+                                    />
                                 )
                             })}
                         </div>

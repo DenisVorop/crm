@@ -13,9 +13,11 @@ const Information = ({ setPopupActive, position, name_doctor, date_last_record, 
                     <div className="last-information__date">{date_last_record}</div>
                     <div className="last-information__building">{name_clinic}</div>
                 </div>
-                <div className="last-information__see">
-                    <span style={{ cursor: 'pointer' }} onClick={() => setPopupActive(true)}><img src={eye} alt="eye" /></span>
-                </div>
+                {setPopupActive ?
+                    <div className="last-information__see">
+                        <span style={{ cursor: 'pointer' }} onClick={() => setPopupActive(true)}><img src={eye} alt="eye" /></span>
+                    </div>
+                    : null}
             </div>
         </div>
     )

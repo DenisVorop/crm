@@ -6,7 +6,7 @@
         background: #FFFFFF;
         border: 1px solid #B7C6CB;
         border-radius: 4px;
-        padding: 15px 20px;
+        padding: 15px 20px 0 20px;
         width: 1280px;
     }
 
@@ -46,13 +46,23 @@
 
     &__column {
         font-size: 18px;
+        width: fit-content;
+        padding: 0 10px;
 
         &:nth-child(4) {
             border-radius: 4px;
             padding: 4px 8px;
         }
+
         &:first-child {
             font-weight: 700;
+        }
+
+        &:last-child {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            width: auto;
         }
     }
 
@@ -64,28 +74,6 @@
     }
 }
 
-.status-column {
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 4px 8px;
-    position: relative;
-}
-
-.info-column {
-    width: 21px;
-    justify-content: flex-end;
-}
-
-.numcard-column {
-    transform: translateX(25px);
-}
-
-.polis-column {
-    transform: translateX(30px);
-}
-
 .info-visible {
     opacity: 0;
     transition: 0.7s all;
@@ -94,16 +82,6 @@
 .info-visible.active {
     opacity: 1;
     transition: 0.7s opacity;
-}
-
-.no-rotated {
-    transform: rotate(180deg);
-    transition: all 0.3s ease 0s;
-}
-
-.rotated {
-    transform: rotate(0);
-    transition: all 0.3s ease 0s;
 }
 
 .sort__popup {

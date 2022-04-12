@@ -7,9 +7,10 @@ import Search from '../../Common/Search/Search';
 import Input from '../../Common/Inputs/Input';
 import InputAge from '../../Common/Inputs/InputAge';
 import InputSex from '../../Common/Inputs/InputSex';
+import Card from './PatientCard/PatientCard';
 
 
-const AllCards = () => {
+const AllCards = ({ getCardNum }) => {
 
     const { usersData } = useSelector(({ usersReducer }) => usersReducer);
 
@@ -97,7 +98,7 @@ const AllCards = () => {
                     </Search>
                 </div>
                 <div className="patients__body">
-                    <div className="patients__columns">
+                    <div className="patients__columns" style={{ gridTemplateColumns: '3fr 1.3fr 2fr 2fr 2fr' }}>
                         <div className="patients__column">ФИО пациента</div>
                         <div className="patients__column">Пол, возраст</div>
                         <div className="patients__column">Номер карты</div>
@@ -107,18 +108,13 @@ const AllCards = () => {
                     <div className='info-visible'></div>
                 </div>
                 <div className="records__body">
-                    {activeCards.map((user, index) => {
+                    {activeCards.map((obj, index) => {
                         return (
-                            <div className="records__row" key={`${user}_${index}`}>
-                                <div className="records__person">
-                                    <div className="records__column">{user.name}</div>
-                                    <div className="records__column">{user.sex}, {user.age}</div>
-                                    <div className="records__column">{user.card_num}</div>
-                                    <div className="records__column">{user.policy}</div>
-                                    <div className="records__column">{user.phone}</div>
-                                </div>
-                                <div className='info-visible'></div>
-                            </div>
+                            <Card
+                                key={`${obj}_${index}`}
+                                {...obj}
+                                getCardNum={getCardNum}
+                            />
                         )
                     })}
                 </div>

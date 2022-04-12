@@ -9,7 +9,7 @@ import NewPatient from './Components/Pages/Reception/NewPatient/NewPatient';
 import NewRecord from './Components/Pages/Reception/NewRecord/NewRecord';
 import Notfound from './Components/Pages/Reception/NotFound/NotFound';
 import Header from './Components/Header/Header';
-import AllCards from './Components/Pages/Cards/AllCards';
+import AllCards from './Components/Pages/PatientsCards/AllCards';
 
 import { getUsersData, getTimesData } from './Redux/Reducers/usersReducer';
 
@@ -46,10 +46,12 @@ function App() {
           <Route path={'new-record'}
             element={<NewRecord />} />
           <Route path={'cards'}
-            element={<AllCards />} />
+            element={<AllCards getCardNum={getCardNum} />} />
         </Route>
+        <Route path={'404'}
+          element={<Notfound />} />
         <Route path={'*'}
-          element={<><Navigate to='404' /><Notfound /></>} />
+          element={<Navigate to='404' />} />
       </Routes>
     </div>
   );
