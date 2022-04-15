@@ -1,13 +1,12 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import Search from '../../Common/Search/Search';
 
 import Input from '../../Common/Inputs/Input';
 import InputAge from '../../Common/Inputs/InputAge';
 import InputSex from '../../Common/Inputs/InputSex';
-import Card from './PatientCard/PatientCard';
+import PatientCard from './PatientCard/PatientCard';
 import EmptySearch from '../../Common/EmptySearch/EmptySearch';
 import Plan from '../../Common/Plan/Plan';
 import Patients from '../../Common/Patients/Patients';
@@ -86,7 +85,7 @@ const AllCards = ({ getCardNum }) => {
                         ? <EmptySearch />
                         : activeCards.map((obj, index) => {
                             return (
-                                <Card
+                                <PatientCard
                                     key={`${obj}_${index}`}
                                     {...obj}
                                     getCardNum={getCardNum}

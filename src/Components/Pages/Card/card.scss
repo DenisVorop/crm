@@ -166,7 +166,15 @@
 
     // .last-records-card__records
 
-    &__records {}
+    &__records {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px 30px;
+        background-color: #FFFFFF;
+        border: 1px solid #B7C6CB;
+        border-radius: 4px;
+        padding: 30px;
+    }
 
     // .last-records-card__record
 
@@ -176,8 +184,7 @@
         }
 
         .last-information {
-            background-color: #FFFFFF;
-            border: 1px solid #B7C6CB;
+            background: rgba(203, 229, 240, 0.3);
             border-radius: 4px;
         }
     }

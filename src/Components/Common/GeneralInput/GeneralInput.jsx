@@ -9,7 +9,7 @@ const GeneralInput = ({ label, onSearchClick, children, id, onToggleCheck, input
     const location = useLocation();
 
     React.useEffect(() => {
-        if (location.pathname === '/reception') {
+        if (location.pathname === '/receptions') {
             setChangedPath(true)
         }
     }, [label])

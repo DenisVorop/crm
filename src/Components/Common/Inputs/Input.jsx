@@ -8,7 +8,7 @@ const Input = ({ label, inputRef, onChangeInput, placeholder, styleInput, type }
     const location = useLocation();
 
     React.useEffect(() => {
-        if (location.pathname === '/reception') {
+        if (location.pathname === '/receptions') {
             setChangedPath(true)
         }
     }, [label])

@@ -9,26 +9,25 @@ import arrowExit from '../../../assets/img/arrow-exit.svg'
 
 const Plan = ({ label }) => {
 
-    const componentRef = useRef();
     const location = useLocation()
     const navigate = useNavigate();
 
-    const goBack = () => navigate(-1);
+    const goBack = () => location.pathname !== '/404' ? navigate(-1) : navigate(-2)
 
     return (
         <>
             <div className="plan">
                 <div className="plan__container">
                     <div
-                        className={location.pathname === '/reception' || location.pathname === '/cards'
+                        className={location.pathname === '/receptions' || location.pathname === '/cards'
                             ? "plan__header"
                             : "plan__header plan__new"
                         }
-                        style={location.pathname === '/reception' || location.pathname === '/cards'
+                        style={location.pathname === '/receptions' || location.pathname === '/cards'
                             ? null
                             : { padding: '3px 0px', cursor: 'pointer' }
                         }
-                        onClick={location.pathname === '/reception' || location.pathname === '/cards'
+                        onClick={location.pathname === '/receptions' || location.pathname === '/cards'
                             ? null
                             : goBack
                         }
@@ -36,14 +35,14 @@ const Plan = ({ label }) => {
                         {location.pathname === '/cards'
                             ? null
                             : <div className="plan__print">
-                                <img src={location.pathname === '/reception'
+                                <img src={location.pathname === '/receptions'
                                     ? print : arrowExit}
                                     alt="print" />
                             </div>
                         }
                         <div className="plan__label">{label}</div>
                     </div>
-                    {location.pathname === '/reception' || location.pathname === '/cards'
+                    {location.pathname === '/receptions' || location.pathname === '/cards'
                         ? <div className="plan__new new-plan">
                             <div className="new-plan__pat" style={{ cursor: 'pointer' }}><Link to='/new-patient'>Добавить нового пациента</Link></div>
                             <div className="new-plan__rec" style={{ cursor: 'pointer' }}><Link to='/new-record'>Создать запись</Link></div>

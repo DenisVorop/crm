@@ -3,18 +3,18 @@
     // .new-rec__container
 
     &__container {
-        // width: 676px;
-        padding: 30px 0px 0px 0px;
+        padding: 30px 0px;
+
+        &:last-child {
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+        }
     }
 
     // .new-rec__body
 
     &__body {
-        padding: 65px 78px 60px 78px;
-        background: #FFFFFF;
-        border: 1px solid #B7C6CB;
-        border-radius: 4px;
-
         width: 676px;
         margin: 0 auto;
     }
@@ -22,23 +22,22 @@
     // .new-rec__items
 
     &__items {
-        width: 515px;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding: 65px 78px 60px 78px;
+        background: #FFFFFF;
+        border: 1px solid #B7C6CB;
+        border-radius: 4px;
     }
 
     // .new-rec__item
 
     &__item {
-        display: flex;
         align-items: center;
-        justify-content: space-between;
-        width: 540px;
-
-        &:not(:last-child) {
-            margin: 0px 0px 32px 0px;
-        }
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 0px 0px 32px 0px;
     }
 
     // .new-rec__vvod
@@ -56,15 +55,17 @@
         }
     }
 
+    &__btn {
+        margin: 18px 0px 0px 0px;
+    }
+
     // .new-rec__label
 
     &__label {
         font-weight: 700;
         font-size: 18px;
         line-height: 130%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        margin: 0px 35px 0px 0px;
     }
 
     // .new-rec__input
@@ -89,14 +90,6 @@
         }
     }
 
-    &__btn {
-        padding: 11px 0;
-        background: #33B1CA;
-        border-radius: 4px;
-        margin: 42px 0px 0px 0px;
-        color: #FFFFFF;
-    }
-
 
     // -------------------
 
@@ -113,21 +106,19 @@
 }
 
 .find {
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
     opacity: 0;
     pointer-events: none;
-    transition: 0.5s;
+    transition: all 0.5s ease 0s;
 
     &__field {
         position: absolute;
         z-index: 2;
         background-color: #fff;
-        border: 1px solid #B7C6CB;
+        border: 1px solid #33B1CA;
         width: 366px;
         max-height: 100px;
         border-radius: 5px;
+        margin: 5px 0px 0px 0px;
     }
 }
 
@@ -135,4 +126,15 @@
     opacity: 1;
     pointer-events: all;
     z-index: 2;
+    background-color: #fff;
+    transition: all 0.3s ease 0s;
+}
+
+.visible-field {
+    padding: 5px;
+
+    &:not(:last-child) {
+        margin: 0px 0px 5px 0px;
+        border-bottom: 1px solid #33B1CA;
+    }
 }

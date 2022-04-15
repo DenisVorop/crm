@@ -3,10 +3,10 @@ import { Navigate, useNavigate } from 'react-router-dom';
 
 import './card.scss'
 
-import arrowExit from '../../../assets/img/arrow-exit.svg'
 import CardRow from './CardRow/CardRow';
 import CardLeft from './CardLeft/CardLeft';
-import Information from '../../Pages/Reception/Filter/Records/Record/informations/Information/information';
+import Information from '../Receptions/Filter/Records/Record/informations/Information/information';
+import Plan from '../../Common/Plan/Plan';
 
 
 const Card = ({ cardInfo }) => {
@@ -16,23 +16,16 @@ const Card = ({ cardInfo }) => {
 
     const labels = ['Фамилия', 'Имя', 'Отчество', 'Пол', 'День рождения', 'Семейное положение', 'Адрес прописки', 'Адрес проживания', 'Телефон', 'Дата первого посещения', 'Дата последнего посещения']
 
+    if (cardInfo[12].last_records.length === 0) {
+        cardInfo[12].last_records = [{ position: 'Нет данных' }]
+    }
+
     if (cardInfo === null) {
         return <Navigate to='/cards' />
     } else {
         return (
             <>
-                <div className="plan">
-                    <div className="plan__container">
-                        <div onClick={goBack}>
-                            <div className="plan__header plan__new" style={{ padding: '3px 0px', cursor: 'pointer' }}>
-                                <div className="plan__print" >
-                                    <img src={arrowExit} alt="arrow-l" />
-                                </div>
-                                <div className="plan__label">Карта пациента</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <Plan label='Карта пациента' />
                 <div className="card">
                     <div className="card__container">
                         <div className="card__body">

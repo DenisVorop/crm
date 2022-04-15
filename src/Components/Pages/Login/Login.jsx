@@ -20,7 +20,7 @@ const Login = () => {
         if (adminInput) {
             if (!!isAuth) {
                 console.log('You are login!', isAuth)
-                navigate('/reception')
+                navigate('/receptions')
             }
         }
     }, [isAuth])

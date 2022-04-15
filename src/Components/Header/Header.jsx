@@ -32,8 +32,8 @@ const Header = () => {
                         <div className="header__nav">
                             <div className="header__links">
                                 <Link
-                                    to={'/reception'}
-                                    className={location.pathname === '/reception' ? "active-link header__link" : "header__link"}
+                                    to={'/receptions'}
+                                    className={location.pathname === '/receptions' ? "active-link header__link" : "header__link"}
                                 >
                                     Приём пациентов
                                 </Link>

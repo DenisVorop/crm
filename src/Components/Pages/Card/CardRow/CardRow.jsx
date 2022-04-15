@@ -39,18 +39,18 @@ const CardRow = ({ card }) => {
                 <>
                     <div className="card__label">{card.label_sub}</div>
                     <div className="card__text">
-                        <p>Аппетит, вкусовые ощущения, слюнотечение: {card.symptoms_sub[1]}</p>
-                        <p>Жажда. Жевание. Глотание, изжога, отрыжка, тошнота, рвота (характер рвотных масс): {card.symptoms_sub[2]}</p>
-                        <p>Боль: {card.symptoms_sub[3]}</p>
-                        <p>Стул: {card.symptoms_sub[4]}</p>
-                        <p>Испражнения: {card.symptoms_sub[5]}</p>
+                        <p>Носовое дыхание: {card.symptoms_sub[1]}</p>
+                        <p>Насморк: {card.symptoms_sub[2]}</p>
+                        <p>Носовые кровотечения: {card.symptoms_sub[3]}</p>
+                        <p>Обоняние: {card.symptoms_sub[4]}</p>
+                        <p>Боли в горле при глотании: {card.symptoms_sub[5]}</p>
                     </div>
                     <div className="card__label">{card.label_ob}</div>
                     <div className="card__text">
-                        <p>Запах изо рта: {card.symptoms_ob[1]}</p>
-                        <p>Слизистая губ: {card.symptoms_ob[2]}</p>
-                        <p>Язык: {card.symptoms_ob[3]}</p>
-                        <p>Миндалины: {card.symptoms_ob[4]}</p>
+                        <p>Осмотр носа: {card.symptoms_ob[1]}</p>
+                        <p>Осмотр шеи: {card.symptoms_ob[2]}</p>
+                        <p>Щитовидная железа: {card.symptoms_ob[3]}</p>
+                        <p>Форма грудной клетки: {card.symptoms_ob[4]}</p>
                     </div>
                 </>
             )

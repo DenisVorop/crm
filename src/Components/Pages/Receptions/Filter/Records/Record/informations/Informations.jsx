@@ -10,9 +10,12 @@ const Informations = ({ last_records }) => {
 
     const [popupActive, setPopupActive] = useState(false);
 
+    let cloneLastRecords = Array.from(last_records)
+
     if (last_records.length === 0) {
-        last_records = [{ position: 'Нет данных' }]
-        console.log(last_records)
+        cloneLastRecords = [{ position: 'Нет данных' }]
+    } else {
+        cloneLastRecords.reverse()
     }
 
     return (
@@ -22,14 +25,16 @@ const Informations = ({ last_records }) => {
                     <div className="information__lasts lasts-information">
                         <div className="information__label bold">Последние приемы</div>
                         <div className="lasts-information__records">
-                            {last_records.map((obj, index) => {
-                                return (
-                                    <Information
-                                        key={`${obj}_${index}`}
-                                        setPopupActive={setPopupActive}
-                                        {...obj}
-                                    />
-                                )
+                            {cloneLastRecords.map((obj, index) => {
+                                for (; index < 3;) {
+                                    return (
+                                        <Information
+                                            key={`${obj}_${index}`}
+                                            setPopupActive={setPopupActive}
+                                            {...obj}
+                                        />
+                                    )
+                                }
                             })}
                         </div>
                     </div>

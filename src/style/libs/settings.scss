@@ -42,17 +42,21 @@ $mobileSmall: em(479.98); // Телефоны S
 }
 
 input,
-select {
+select,
+textarea {
     font-family: 'Nunito Sans' !important;
     font-style: normal !important;
     font-weight: 400 !important;
     font-size: 18px !important;
     line-height: 130% !important;
     color: #012B39 !important;
+    border: 1px solid #B7C6CB !important;
+    border-radius: 4px !important;
 }
 
 input:focus,
-select:focus {
+select:focus,
+textarea:focus {
     outline: 1px solid #0076A3;
     border: none;
 }

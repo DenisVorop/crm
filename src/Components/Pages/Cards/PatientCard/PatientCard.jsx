@@ -11,7 +11,7 @@ const PatientCard = ({ age, birth, card_num, card_info,
             last_name, first_name, patronymic, sex,
             birth, marital_status, reg_addres, fact_addres,
             phone, first_record, last_record, card_info = { card_info },
-            last_records = {last_records}
+            last_records = { last_records }
         ]
         getCardNum(objPatientCard)
     }

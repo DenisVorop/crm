@@ -8,7 +8,7 @@ import Records from "./Records/Records";
 import './filter.scss';
 
 
-const Filter = ({ takePrintRecord, getCardNum }) => {
+const Filter = ({ getReception }) => {
     const { usersData } = useSelector(({ usersReducer }) => usersReducer);
 
     const arrUsers = JSON.parse(JSON.stringify(usersData));
@@ -16,22 +16,14 @@ const Filter = ({ takePrintRecord, getCardNum }) => {
 
     const [activeUsers, setActiveUsers] = React.useState(arrUsers);
     const [num, setNum] = React.useState(false)
-    const receptionRef = React.useRef();
-
-    const [recordsTable, setRecordsTable] = React.useState(null);
-    const myRef = React.useRef();
-
-    const printTable = () => {
-        setRecordsTable(myRef.current)
-        takePrintRecord(recordsTable)
-    }
+    const receptionsRef = React.useRef();
 
     const onSearchClick = () => {
         let filteredUsers
         if (!num) {
-            filteredUsers = arrUsers.filter(user => user.name.toLowerCase().includes(receptionRef.current.value.toLowerCase()))
+            filteredUsers = arrUsers.filter(user => user.name.toLowerCase().includes(receptionsRef.current.value.toLowerCase()))
         } else {
-            filteredUsers = arrUsers.filter(user => user.card_num.toLowerCase().includes(receptionRef.current.value.toLowerCase()))
+            filteredUsers = arrUsers.filter(user => user.card_num.toLowerCase().includes(receptionsRef.current.value.toLowerCase()))
         }
         setActiveUsers(filteredUsers)
     }
@@ -45,7 +37,7 @@ const Filter = ({ takePrintRecord, getCardNum }) => {
             <div className="filter__container">
                 <Head
                     onSearchClick={onSearchClick}
-                    receptionRef={receptionRef}
+                    receptionsRef={receptionsRef}
                     onToggleCheck={onToggleCheck}
                     num={num}
                 />
@@ -53,10 +45,8 @@ const Filter = ({ takePrintRecord, getCardNum }) => {
                 <Records
                     activeUsers={activeUsers}
                     onSearchClick={onSearchClick}
-                    myRef={myRef}
-                    printTable={printTable}
                     usersData={usersData}
-                    getCardNum={getCardNum}
+                    getReception={getReception}
                 />
             </div>
         </div>

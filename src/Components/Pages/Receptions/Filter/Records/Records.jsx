@@ -7,23 +7,22 @@ import Record from './Record/Record';
 import './records.scss';
 
 
-const Records = ({ activeUsers, onSearchClick, myRef, printTable, usersData, getCardNum }) => {
+const Records = ({ activeUsers, onSearchClick, usersData, getReception }) => {
 
     const { timesData } = useSelector(({ usersReducer }) => usersReducer);
 
     React.useEffect(() => {
         setTimeout(onSearchClick, 0)
-        setTimeout(printTable, 0)
     }, [usersData]);
 
     return (
-        <div className="records__body" ref={myRef}>
+        <div className="records__body">
             {activeUsers.map((obj, index) => {
                 return <Record
                     timeObj={timesData}
                     key={`${obj}_${index}`}
                     {...obj}
-                    getCardNum={getCardNum}
+                    getReception={getReception}
                 />
             })}
             {activeUsers.length === 0

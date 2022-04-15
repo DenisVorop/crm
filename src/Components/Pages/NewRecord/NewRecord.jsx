@@ -7,9 +7,11 @@ import { useNavigate } from 'react-router-dom';
 import './newrecord.scss'
 
 import arrowB from '../../../assets/img/arrow-b.svg'
+import arrowT from '../../../assets/img/arrow-t.svg'
 
 import { addNewRecord } from '../../../Redux/Reducers/usersReducer';
 import Plan from '../../Common/Plan/Plan';
+import Button from '../../Common/Button/Button';
 
 const NewRecord = () => {
 
@@ -26,12 +28,14 @@ const NewRecord = () => {
     const [infoPatient, setInfoPatient] = React.useState(null);
     const [enteredName, setEnteredName] = React.useState('');
     const [enteredCard, setEnteredCard] = React.useState('');
+    const [changeArrow, setChangeArrow] = React.useState(false);
 
     const searchNamesRef = React.useRef();
     const searchCardsRef = React.useRef();
 
     const onSearchChangeNames = () => {
         setVisibleNames(true)
+        setChangeArrow(true)
         setEnteredName(searchNamesRef.current.value)
         let filteredUsers = arrUsers.filter(user => user.name.toLowerCase().includes(searchNamesRef.current.value.toLowerCase()))
         setActiveUsers(filteredUsers)
@@ -79,87 +83,89 @@ const NewRecord = () => {
                     }
                     dispatch(addNewRecord(obj))
                     console.log(obj)
-                    navigate('/reception')
+                    navigate('/receptions')
                 }}
             >
                 {({ values, handleChange, handleBlur, isValid, handleSubmit, dirty, touched, errors }) => (
-                    <Form>
+                    <>
                         <Plan label='Создание новой записи' />
-                        <div className='new-rec' onClick={() => (setVisibleNames(false), setVisibleCards(false))}>
-                            <div className="new-rec__container">
-                                <div className="new-rec__body">
-                                    <div className="new-rec__items">
-                                        <div className="new-rec__item">
-                                            <div className="new-rec__label">Врач</div>
-                                            <div className="new-rec__vvod">
-                                                <div className="new-rec__input">
-                                                    <input
-                                                        type="text"
-                                                        placeholder='Выберите врача'
-                                                        name='name_doctor'
-                                                        onChange={handleChange}
-                                                        onBlur={handleBlur}
-                                                    />
-                                                </div>
-                                                <div className="new-rec__img">
-                                                    <img src={arrowB} alt='arrow-b' />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="new-rec__item">
-                                            <div className="new-rec__label">Отделение</div>
-                                            <div className="new-rec__vvod">
-                                                <div className="new-rec__input">
-                                                    <input
-                                                        type="text"
-                                                        placeholder='Выберите отделение'
-                                                        name='separation'
-                                                        onChange={handleChange}
-                                                        onBlur={handleBlur}
-                                                    />
-                                                </div>
-                                                <div className="new-rec__img">
-                                                    <img src={arrowB} alt='arrow-b' />
+                        <Form>
+                            <div className='new-rec' onClick={() => (setVisibleNames(false), setVisibleCards(false), setChangeArrow(false))}>
+                                <div className="new-rec__container">
+                                    <div className="new-rec__body">
+                                        <div className="new-rec__items">
+                                            <div className="new-rec__item">
+                                                <div className="new-rec__label">Врач</div>
+                                                <div className="new-rec__vvod">
+                                                    <div className="new-rec__input">
+                                                        <input
+                                                            type="text"
+                                                            placeholder='Выберите врача'
+                                                            name='name_doctor'
+                                                            onChange={handleChange}
+                                                            onBlur={handleBlur}
+                                                        />
+                                                    </div>
+                                                    <div className="new-rec__img">
+                                                        <img src={arrowB} alt='arrow-b' />
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div className="new-rec__item">
-                                            <div className="new-rec__label">ФИО пациента</div>
-                                            <div className="new-rec__vvod">
-                                                <div className="new-rec__input">
-                                                    <input
-                                                        className={!infoPatient && touched.pat_name && errors.pat_name ? "valid-input-error" : ""}
-                                                        type="text"
-                                                        placeholder='Выберите пациента'
-                                                        name='pat_name'
-                                                        autoComplete="off"
-                                                        onChange={(handleChange, onSearchChangeNames)}
-                                                        onBlur={handleBlur}
-                                                        ref={searchNamesRef}
-                                                        value={infoPatient ? infoPatient.name : enteredName}
-                                                        onClick={() => setInfoPatient(null)}
-                                                    />
-                                                    {!infoPatient && touched.pat_name && errors.pat_name && <p className='valid-text-error'>{errors.pat_name}</p>}
-                                                    {visibleNames
-                                                        ? <div className={visibleNames ? 'find active' : 'find'} >
-                                                            <div className="find__field" onClick={e => e.stopPropagation()} >
-                                                                {activeUsers.map((pat, index) => {
-                                                                    return (
-                                                                        <div
-                                                                            value={pat.name}
-                                                                            key={`${pat}_${index}`}
-                                                                            style={{ cursor: 'pointer' }}
-                                                                            onClick={() => (setVisibleNames(false), setVisibleCards(false), autoCompleteInfo(pat))}
-                                                                        >
-                                                                            {pat.name}
-                                                                        </div>
-                                                                    )
-                                                                })}
+                                            <div className="new-rec__item">
+                                                <div className="new-rec__label">Отделение</div>
+                                                <div className="new-rec__vvod">
+                                                    <div className="new-rec__input">
+                                                        <input
+                                                            type="text"
+                                                            placeholder='Выберите отделение'
+                                                            name='separation'
+                                                            onChange={handleChange}
+                                                            onBlur={handleBlur}
+                                                        />
+                                                    </div>
+                                                    <div className="new-rec__img">
+                                                        <img src={arrowB} alt='arrow-b' />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="new-rec__item">
+                                                <div className="new-rec__label">ФИО пациента</div>
+                                                <div className="new-rec__vvod">
+                                                    <div className="new-rec__input">
+                                                        <input
+                                                            className={!infoPatient && touched.pat_name && errors.pat_name ? "valid-input-error" : ""}
+                                                            type="text"
+                                                            placeholder='Выберите пациента'
+                                                            name='pat_name'
+                                                            autoComplete="off"
+                                                            onChange={(handleChange, onSearchChangeNames)}
+                                                            onBlur={handleBlur}
+                                                            ref={searchNamesRef}
+                                                            value={infoPatient ? infoPatient.name : enteredName}
+                                                            onClick={() => setInfoPatient(null)}
+                                                        />
+                                                        {!infoPatient && touched.pat_name && errors.pat_name && <p className='valid-text-error'>{errors.pat_name}</p>}
+                                                        {visibleNames
+                                                            ? <div className={visibleNames ? 'find active' : 'find'} >
+                                                                <div className="find__field" onClick={e => e.stopPropagation()} >
+                                                                    {activeUsers.map((pat, index) => {
+                                                                        return (
+                                                                            <div
+                                                                                value={pat.name}
+                                                                                key={`${pat}_${index}`}
+                                                                                style={{ cursor: 'pointer' }}
+                                                                                onClick={() => (setVisibleNames(false), setVisibleCards(false), autoCompleteInfo(pat), setChangeArrow(false))}
+                                                                                className='visible-field'
+                                                                            >
+                                                                                {pat.name} --- {pat.card_num}
+                                                                            </div>
+                                                                        )
+                                                                    })}
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        : null
-                                                    }
-                                                    {/* <select
+                                                            : null
+                                                        }
+                                                        {/* <select
                                                         className="time-select"
                                                         name='pat_name'
                                                         onChange={handleChange}
@@ -177,83 +183,84 @@ const NewRecord = () => {
                                                             )
                                                         })}
                                                     </select> */}
-                                                </div>
-                                                <div className="new-rec__img">
-                                                    <img src={arrowB} alt='arrow-b' />
+                                                    </div>
+                                                    <div className="new-rec__img">
+                                                        <img src={!changeArrow ? arrowB : arrowT} alt='arrow-b' />
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div className="new-rec__item">
-                                            <div className="new-rec__label">Номер карты</div>
-                                            <div className="new-rec__vvod">
-                                                <div className="new-rec__input">
-                                                    <input
-                                                        className={!infoPatient && touched.card_num && errors.card_num ? "valid-input-error" : ""}
-                                                        type="number"
-                                                        placeholder='Введите номер карты'
-                                                        name='card_num'
-                                                        autoComplete='off'
-                                                        onChange={(handleChange, onSearchChangeCards)}
-                                                        onBlur={handleBlur}
-                                                        ref={searchCardsRef}
-                                                        value={infoPatient ? infoPatient.card_num : enteredCard}
-                                                        onClick={() => setInfoPatient(null)}
-                                                    />
-                                                    {!infoPatient && touched.card_num && errors.card_num && <p className='valid-text-error'>{errors.card_num}</p>}
-                                                    {visibleCards
-                                                        ? <div className={visibleCards ? 'find active' : 'find'} >
-                                                            <div className="find__field" onClick={e => e.stopPropagation()} >
-                                                                {activeUsers.map((pat, index) => {
-                                                                    return (
-                                                                        <div
-                                                                            value={pat.card_num}
-                                                                            key={`${pat}_${index}`}
-                                                                            style={{ cursor: 'pointer' }}
-                                                                            onClick={() => (setVisibleNames(false), setVisibleCards(false), autoCompleteInfo(pat))}
-                                                                        >
-                                                                            {pat.card_num}
-                                                                        </div>
-                                                                    )
-                                                                })}
+                                            <div className="new-rec__item">
+                                                <div className="new-rec__label">Номер карты</div>
+                                                <div className="new-rec__vvod">
+                                                    <div className="new-rec__input">
+                                                        <input
+                                                            className={!infoPatient && touched.card_num && errors.card_num ? "valid-input-error" : ""}
+                                                            type="number"
+                                                            placeholder='Введите номер карты'
+                                                            name='card_num'
+                                                            autoComplete='off'
+                                                            onChange={(handleChange, onSearchChangeCards)}
+                                                            onBlur={handleBlur}
+                                                            ref={searchCardsRef}
+                                                            value={infoPatient ? infoPatient.card_num : enteredCard}
+                                                            onClick={() => setInfoPatient(null)}
+                                                        />
+                                                        {!infoPatient && touched.card_num && errors.card_num && <p className='valid-text-error'>{errors.card_num}</p>}
+                                                        {visibleCards
+                                                            ? <div className={visibleCards ? 'find active' : 'find'} >
+                                                                <div className="find__field" onClick={e => e.stopPropagation()} >
+                                                                    {activeUsers.map((pat, index) => {
+                                                                        return (
+                                                                            <div
+                                                                                value={pat.card_num}
+                                                                                key={`${pat}_${index}`}
+                                                                                style={{ cursor: 'pointer', display: 'block', fontWeight: '400' }}
+                                                                                onClick={() => (setVisibleNames(false), setVisibleCards(false), autoCompleteInfo(pat))}
+                                                                                className='visible-field'
+                                                                            >
+                                                                                {pat.card_num} --- {pat.name}
+                                                                            </div>
+                                                                        )
+                                                                    })}
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        : null
-                                                    }
-                                                </div>
-                                                <div className="new-rec__img">
-                                                    <img src={arrowB} alt='arrow-b' />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="new-rec__item">
-                                            <div className="new-rec__label">Время</div>
-                                            <div className="new-rec__vvod">
-                                                <div className="new-rec__input">
-                                                    <select
-                                                        className="time-select"
-                                                        name='time'
-                                                        onChange={handleChange}
-                                                        onBlur={handleBlur}
-                                                    >
-                                                        {timesData.map((time, index) => {
-                                                            return (
-                                                                <option
-                                                                    name='time'
-                                                                    value={time.time_id}
-                                                                    key={`${time}_${index}`}
-                                                                >
-                                                                    {time.time}
-                                                                </option>
-                                                            )
-                                                        })}
-                                                    </select>
-                                                </div>
-                                                <div className="new-rec__img">
-                                                    <img src={arrowB} alt='arrow-b' />
+                                                            : null
+                                                        }
+                                                    </div>
+                                                    <div className="new-rec__img">
+                                                        <img src={arrowB} alt='arrow-b' />
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        {/* <div className="new-rec__item">
+                                            <div className="new-rec__item">
+                                                <div className="new-rec__label">Время</div>
+                                                <div className="new-rec__vvod">
+                                                    <div className="new-rec__input">
+                                                        <select
+                                                            className="time-select"
+                                                            name='time'
+                                                            onChange={handleChange}
+                                                            onBlur={handleBlur}
+                                                        >
+                                                            {timesData.map((time, index) => {
+                                                                return (
+                                                                    <option
+                                                                        name='time'
+                                                                        value={time.time_id}
+                                                                        key={`${time}_${index}`}
+                                                                    >
+                                                                        {time.time}
+                                                                    </option>
+                                                                )
+                                                            })}
+                                                        </select>
+                                                    </div>
+                                                    <div className="new-rec__img">
+                                                        <img src={arrowB} alt='arrow-b' />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {/* <div className="new-rec__item">
                                             <div className="new-rec__label">Дата</div>
                                             <div className="new-rec__vvod">
                                                 <div className="new-rec__input">
@@ -270,39 +277,33 @@ const NewRecord = () => {
                                                 </div>
                                             </div>
                                         </div> */}
-                                        <div className="new-rec__item">
-                                            <div className="new-rec__label">Тип записи</div>
-                                            <div className="new-rec__vvod">
-                                                <div className="new-rec__input">
-                                                    <input
-                                                        type="text"
-                                                        placeholder='Выберите тип записи'
-                                                        name='type'
-                                                        value='Ожидает прием'
-                                                        onChange={handleChange}
-                                                        onBlur={handleBlur}
-                                                    />
-                                                </div>
-                                                <div className="new-rec__img">
-                                                    <img src={arrowB} alt='arrow-b' />
+                                            <div className="new-rec__item">
+                                                <div className="new-rec__label">Тип записи</div>
+                                                <div className="new-rec__vvod">
+                                                    <div className="new-rec__input">
+                                                        <input
+                                                            type="text"
+                                                            placeholder='Выберите тип записи'
+                                                            name='type'
+                                                            value='Ожидает прием'
+                                                            onChange={handleChange}
+                                                            onBlur={handleBlur}
+                                                        />
+                                                    </div>
+                                                    <div className="new-rec__img">
+                                                        <img src={arrowB} alt='arrow-b' />
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div className="new-rec__btn">
-                                        <div
-                                            className="new-rec__label"
-                                            style={{ cursor: 'pointer' }}
-                                            onClick={handleSubmit}
-                                            disabled={!isValid && !dirty}
-                                        >
-                                            Создать новую запись
+                                            <div className="new-rec__btn" onClick={handleSubmit} disabled={!isValid && !dirty}>
+                                                <Button label='Создать новую запись' />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </Form>
+                        </Form>
+                    </>
                 )}
             </Formik>
         </>

@@ -8,7 +8,7 @@ import DatePick from './DatePicker/DatePicker'
 import Search from '../../../../Common/Search/Search'
 import Input from '../../../../Common/Inputs/Input'
 
-const Head = ({ onSearchClick, onToggleCheck, num, receptionRef }) => {
+const Head = ({ onSearchClick, onToggleCheck, num, receptionsRef }) => {
     return (
         <div className="filter__head">
             <div className="filter__date date-filter">
@@ -38,7 +38,7 @@ const Head = ({ onSearchClick, onToggleCheck, num, receptionRef }) => {
                     styleInput={{ width: '380px' }}
                     placeholder={!num ? 'Введите ФИО пациента' : 'Введите номер карты пациента'}
                     label='Номер карты'
-                    inputRef={receptionRef}
+                    inputRef={receptionsRef}
                 />
             </Search>
         </div>
