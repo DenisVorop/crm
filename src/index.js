@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-import App from './App';
-import store from './Redux/store';
+import App from './client/App';
+import store from './client/Redux/store';
 
-import './style/app.scss';
+import './client/style/app.scss';
 
 
 ReactDOM.render(

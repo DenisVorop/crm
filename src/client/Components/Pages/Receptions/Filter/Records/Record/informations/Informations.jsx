@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React from 'react';
 
 import Popup from '../../../../../../Common/Popup/Popup';
 import Last from './Information/LastsRecords/Last';
@@ -8,7 +8,7 @@ import './information.scss';
 
 const Informations = ({ last_records }) => {
 
-    const [popupActive, setPopupActive] = useState(false);
+    const [popupActive, setPopupActive] = React.useState(false);
 
     let cloneLastRecords = Array.from(last_records)
 

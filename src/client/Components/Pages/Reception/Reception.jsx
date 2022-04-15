@@ -1,3 +1,4 @@
+import React from 'react'
 import { Navigate } from "react-router-dom"
 import Button from "../../Common/Button/Button"
 
@@ -24,7 +25,7 @@ const Reception = ({ receptionInfo }) => {
                         <div className="reception__admission-info admission-info-reception">
                             <div className="admission-info-reception__column">
                                 <div className="admission-info-reception__label">Дата</div>
-                                <div className="admission-info-reception__text">14.03.2021</div>
+                                <div className="admission-info-reception__text">15.04.2022</div>
                             </div>
                             <div className="admission-info-reception__column">
                                 <div className="admission-info-reception__label">Врач</div>

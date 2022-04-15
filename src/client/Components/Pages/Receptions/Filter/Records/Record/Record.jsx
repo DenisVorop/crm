@@ -31,9 +31,9 @@ const Record = ({ age, birth, card_num, card_info,
 
     switch (status) {
         case 'Прием завершен': { statusStyle = { background: 'rgba(148, 227, 188, .4)', color: '#31BF79' }; break; }
-        case 'Прием идет': { statusStyle = { background: 'rgba(255, 220, 173, .4)', color: '#FFB149' }; break; }
-        case 'Прием отменен': { statusStyle = { background: 'rgba(254, 64, 33, .4)', color: '#FE4021' }; break; }
-        case 'Ожидает прием': { statusStyle = { background: 'rgba(203, 229, 240, 0.3)', color: '#B0DAEC' }; break; }
+        case 'Первичный прием': { statusStyle = { background: 'rgba(255, 220, 173, .4)', color: '#FFB149' }; break; }
+        case 'Послеоперац-ный прием': { statusStyle = { background: 'rgba(254, 64, 33, .4)', color: '#FE4021' }; break; }
+        case 'Повторный прием': { statusStyle = { background: 'rgba(203, 229, 240, 0.3)', color: '#B0DAEC' }; break; }
         default: { break; }
     }
 

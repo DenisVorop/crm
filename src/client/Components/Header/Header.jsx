@@ -41,7 +41,7 @@ const Header = () => {
                                     to={'/cards'}
                                     className={location.pathname === '/cards' ? "active-link header__link" : "header__link"}
                                 >
-                                    Карты пациентов
+                                    Картотека
                                 </Link>
                             </div>
                         </div>
