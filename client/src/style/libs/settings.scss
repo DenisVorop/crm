@@ -1,0 +1,90 @@
+// Подключение шрифтов ===========================================================================================================================================================================================================================================================================
+//&display=swap - добавить при подключении через плагин
+@import url(https://fonts.googleapis.com/css?family=Nunito+Sans:regular,700&display=swap);
+
+// Шрифт по умолчанию ==============================================================================================================================================================================================================================================================================
+$fontFamily: "Nunito Sans";
+$fontSize: 14px; // где 14(px) - размер шрифта по умолчанию
+$line-height: 1; // Указать свой
+$weight: 400; // жирнотааа
+
+// Основные цвета
+$mainColor: #061519;
+; // Цвет шрифта по умолчанию
+
+// НАСТРОЙКИ ===============================================================================================================================================================================================================================================================================================
+// Минимальная ширина страницы
+$minWidth: 320;
+// Ширина полотна (макета)
+$maxWidth: 1920;
+// Ширина ограничивающего контейнера (0 = нет ограничения)
+$maxWidthContainer: 1280;
+// Общий отступ у контейнера
+// (30 = по 15px слева и справа, 0 = нет отступа)
+$containerPadding: 0;
+
+// Ширина срабатывания первого брейкпоинта
+$containerWidth: $maxWidthContainer+$containerPadding;
+
+// Брейк-поинты
+$pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: em(767.98); // Телефоны L
+$mobileSmall: em(479.98); // Телефоны S
+
+*::placeholder {
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    color: #B7C6CB;
+}
+
+input,
+select,
+textarea {
+    font-family: 'Nunito Sans' !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 18px !important;
+    line-height: 130% !important;
+    color: #012B39 !important;
+    border: 1px solid #B7C6CB !important;
+    border-radius: 4px !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 1px solid #0076A3;
+    border: none;
+}
+
+
+.time-select {
+    background: rgba(203, 229, 240, 0.3);
+    border: 1px solid #B7C6CB;
+    border-radius: 4px;
+    width: 366px;
+    height: 30px;
+    padding: 0px 0px 0px 6px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="number"]:hover,
+input[type="number"]:focus {
+    -moz-appearance: number-input;
+}

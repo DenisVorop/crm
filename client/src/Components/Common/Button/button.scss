@@ -1,0 +1,17 @@
+.button {
+    font-size: 18px;
+    line-height: 130%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    background: #33B1CA;
+    border-radius: 4px;
+    padding: 10px 40px;
+    cursor: pointer;
+
+    button {
+        font-weight: 700 !important;
+    }
+}
