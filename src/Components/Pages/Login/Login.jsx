@@ -4,30 +4,35 @@ import { useNavigate } from 'react-router-dom';
 import { Form, Formik } from 'formik';
 import * as yup from 'yup';
 
-import { getAdmin } from '../../../Redux/Reducers/authReducer';
+import { setLoginValues } from '../../../Redux/Reducers/authReducer';
 
 import './login.scss'
+
+// -----
+import { registrationApi, loginApi } from '../../../API/api';
+// -----
 
 
 const Login = () => {
 
-    const { admin, login, password, isAuth } = useSelector(({ authReducer }) => authReducer);
+    const { user } = useSelector(({ authReducer }) => authReducer);
     const dispatch = useDispatch();
     const navigate = useNavigate()
 
-    const adminInput = admin.login === login && admin.password === password;
-    React.useEffect(() => {
-        if (adminInput) {
-            if (!!isAuth) {
-                console.log('You are login!', isAuth)
-                navigate('/receptions')
-            }
+    // -----
+    const signIn = async (values) => {
+        try {
+            let data
+            data = await loginApi(values.login, values.password)
+            // data = await registrationApi(values.login, values.password)
+            dispatch(setLoginValues(data));
+            navigate('/receptions')
+            console.log(user)
+        } catch (e) {
+            alert(e.response.data.message)
         }
-    }, [isAuth])
-
-    const getLoginValues = (values) => {
-        dispatch(getAdmin(values));
     }
+    // -----
 
     const validationLogin = yup.object().shape({
         login: yup.string().typeError('string expected!').required('Введите корректные данные'),
@@ -43,7 +48,8 @@ const Login = () => {
             validateOnBlur={false}
             validateOnChange={false}
             onSubmit={(values) => {
-                getLoginValues(values)
+                // getLoginValues(values)
+                signIn(values)
             }}
             validationSchema={validationLogin}
         >

@@ -1,12 +1,10 @@
-const GET_ADMIN = 'GET_ADMIN';
-const LOGOUT = 'LOGOUT';
+const SET_LOGIN = 'GET_ADMIN';
+const SET_LOGOUT = 'SET_LOGOUT';
 
 
 
 const initialState = {
-    login: 'admin',
-    password: 'admin',
-    admin: [],
+    user: [],
     isAuth: false,
 }
 
@@ -14,16 +12,17 @@ const initialState = {
 
 const authReducer = (state = initialState, action) => {
     switch (action.type) {
-        case GET_ADMIN: {
+        case SET_LOGIN: {
             return {
                 ...state,
-                admin: action.payload,
+                user: action.payload,
                 isAuth: true,
             }
         }
-        case LOGOUT: {
+        case SET_LOGOUT: {
             return {
                 ...state,
+                user: action.payload,
                 isAuth: false,
             }
         }
@@ -35,18 +34,16 @@ const authReducer = (state = initialState, action) => {
 
 
 
-export const getAdmin = (payload) => {
+export const setLoginValues = (payload) => {
     return {
-        type: GET_ADMIN,
+        type: SET_LOGIN,
         payload,
     }
 }
-
-
-
-export const logout = () => {
+export const setLogoutValues = (payload) => {
     return {
-        type: LOGOUT
+        type: SET_LOGOUT,
+        payload,
     }
 }
 

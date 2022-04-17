@@ -1,25 +1,27 @@
 import React from 'react'
-import { Link, Outlet, useLocation } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 
 import './header.scss'
 
-import logo from '../../assets/img/logo.svg'
-import logoutImg from '../../assets/img/logout.svg'
+import logo from '../../../assets/img/logo.svg'
+import logoutImg from '../../../assets/img/logout.svg'
 
-import { logout } from '../../Redux/Reducers/authReducer'
+import { setLogoutValues } from '../../../Redux/Reducers/authReducer'
 
 
 const Header = () => {
 
+    const {user} = useSelector(({authReducer}) => authReducer)
     const dispatch = useDispatch();
     const location = useLocation();
+    const navigate = useNavigate()
 
-    const logOff = () => {
-        dispatch(logout())
+    const logOut = () => {
+        dispatch(setLogoutValues({}));
+        window.localStorage.removeItem('token')
+        navigate('/login')
     }
-
-
 
     return (
         <>
@@ -47,10 +49,10 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="header__log">
-                        <div className="header__name">Иванова И. Ю.</div>
-                        <Link to="/login" className="header__button" onClick={logOff}>
+                        <div className="header__name">{user.name}</div>
+                        <div className="header__button" onClick={logOut} style={{cursor: 'pointer'}}>
                             <img src={logoutImg} alt="logout" />
-                        </Link>
+                        </div>
                     </div>
                 </div>
             </header>

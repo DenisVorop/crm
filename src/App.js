@@ -1,8 +1,9 @@
 import React from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
-import Header from './Components/Header/Header';
+import Header from './Components/Common/Header/Header';
+import Preloader from './Components/Common/Preloader/Preloader';
 import Login from "./Components/Pages/Login/Login";
 import Page from "./Components/Pages/Receptions/Page";
 import NewPatient from './Components/Pages/NewPatient/NewPatient';
@@ -10,17 +11,33 @@ import NewRecord from './Components/Pages/NewRecord/NewRecord';
 import AllCards from './Components/Pages/Cards/AllCards';
 import Notfound from './Components/Pages/NotFound/NotFound';
 import Card from './Components/Pages/Card/Card';
-
+import Reception from './Components/Pages/Reception/Reception';
 
 import { getoldUsersData, getTimesData } from './Redux/Reducers/usersReducer';
-import Reception from './Components/Pages/Reception/Reception';
+import { setLoginValues } from './Redux/Reducers/authReducer';
+
+import { checkApi } from './API/api';
 
 
 function App() {
 
+  const { user, isAuth } = useSelector(({ authReducer }) => authReducer);
+  const [loading, setLoading] = React.useState(true)
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   React.useEffect(() => {
+    checkApi().then(data => {
+      dispatch(setLoginValues(data));
+    }).finally(() => setLoading(false))
+
+    if (isAuth === false && !window.localStorage.token) {
+      navigate('/login')
+    }
+    if (isAuth === false && window.localStorage.token) {
+      navigate('/receptions')
+    }
+
     dispatch(getoldUsersData());
     dispatch(getTimesData());
   }, []);
@@ -36,6 +53,9 @@ function App() {
     setReceptionInfo(objReception)
   }
 
+  if (loading) {
+    return <Preloader />
+  }
   return (
     <div className="wrapper">
       <Routes>
