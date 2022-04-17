@@ -1,0 +1,185 @@
+.filter {
+    padding: 0px 0px 30px 0px;
+    min-height: 90.5vh;
+
+    // .filter__container
+
+    &__container {}
+
+    &__head {
+        display: flex;
+        align-items: center;
+        padding: 22px 0;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-right: -35px;
+        gap: 10px;
+
+        input {
+            border: 1px solid #B7C6CB;
+            border-radius: 4px;
+            height: 30px;
+            padding: 0px 0px 0px 30px;
+            margin: 0px 3px 0px 0px;
+
+            &::placeholder {
+                font-family: 'Nunito Sans', serif;
+                color: var(--secondary-no-contrast)
+            }
+        }
+
+        >:last-child {
+            margin-right: 35px;
+        }
+    }
+
+    // .filter__date
+
+    &__date {}
+
+    // .filter__patient
+
+    &__patient {}
+}
+
+.date-filter {
+    display: flex;
+    align-items: center;
+
+    // .date-filter__label
+
+    &__label {
+        font-weight: 700;
+        font-size: 18px;
+        margin: 0px 16px 0px 0px;
+    }
+
+    // .date-filter__date
+
+    &__date {
+        display: flex;
+        align-items: center;
+    }
+
+    // .date-filter__arrow
+
+    &__arrow-l {
+        margin: 0px 7px 0px 0px;
+    }
+
+    &__arrow-r {
+        margin: 0px 0px 0px 7px;
+    }
+
+    // .date-filter__choice
+
+    &__choice {
+        margin: 0px 2px 0px 0px;
+        background-color: #FFFFFF;
+        height: 30px;
+    }
+
+    // .date-filter__calendar
+
+    &__calendar {
+        padding: 4.5px;
+        border: 1px solid #B7C6CB;
+        border-radius: 4px;
+        background-color: #FFFFFF;
+
+        img {
+            width: 21px;
+            height: 19px;
+        }
+    }
+}
+
+.patient-filter {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+        margin: 0px 35px 0px 0px;
+    }
+
+    // .patient-filter__card
+
+    &__card {
+        display: flex;
+        align-items: center;
+        padding: 6px 8px;
+        background: #CBE5F0;
+        border-radius: 4px;
+        margin: 0px 18px 0px 0px;
+
+        label {
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        input.patient-filter__checkbox {
+            height: auto;
+        }
+    }
+
+    // .patient-filter__label
+
+    &__label {
+        color: #012B39;
+        font-size: 18px;
+        margin: 0px 27px 0px 0px;
+        font-weight: 700;
+    }
+
+    &__checkbox {
+        margin: 0px 0px 0px -20px;
+    }
+
+    // .patient-filter__number
+
+    &__number {
+        display: flex;
+        align-items: center;
+
+        img {
+            position: relative;
+            z-index: 2;
+            margin: 0px -23px 0px 0px;
+        }
+    }
+
+    // .patient-filter__search
+
+    &__search {
+        background: #33B1CA;
+        border-radius: 4px;
+        padding: 15px 18px;
+        color: #F3F7F9;
+        font-weight: 700;
+        font-size: 18px;
+        height: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__input {
+        border: 1px solid #B7C6CB;
+        border-radius: 4px;
+        width: 380px;
+        height: 30px;
+        padding: 0px 0px 0px 30px;
+        margin: 0px 3px 0px 0px;
+    }
+
+    &__checkbox {}
+}
+
+.filter-sex {
+    display: flex;
+    align-items: center;
+
+    &__option {
+        margin: 0px 0px 0px 8px;
+    }
+}

@@ -1,0 +1,113 @@
+.reception {
+
+    // .reception__container
+
+    &__container {
+        padding: 0px 0px 30px 0px;
+    }
+
+    // .reception__body
+
+    &__body {
+        margin: 30px 0px 10px 0px;
+        background: var(--back-of-elements);
+        border: 1px solid #B7C6CB;
+        box-sizing: border-box;
+        border-radius: 4px;
+        padding: 30px 40px;
+    }
+
+    // .reception__title
+
+    &__title {
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 30px;
+        margin: 0px 0px 25px 0px;
+    }
+
+    // .reception__admission-info
+
+    &__admission-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 25px 90px;
+        padding: 0px 0px 25px 0px;
+        border-bottom: 1px solid #CCD6DA;
+    }
+
+    // .reception__rows
+
+    &__rows {
+        padding: 30px 0px 0px 0px;
+    }
+
+    // .reception__row
+
+    &__row {
+        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 6fr;
+
+        &:not(:last-child) {
+            margin: 0px 0px 16px 0px;
+        }
+    }
+
+    // .reception__label
+
+    &__label {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 130%;
+        margin: 0px 15px 0px 0px;
+    }
+
+    // .reception__input
+
+    &__input {
+        flex: 1 1 auto;
+
+        textarea {
+            width: 100%;
+            background: rgba(203, 229, 240, 0.3);
+            min-height: 85px;
+        }
+    }
+
+    &__save {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+
+}
+
+.admission-info-reception {
+
+    // .admission-info-reception__column
+
+    &__column {
+        &:last-child {
+            grid-column-start: 2;
+            grid-column-end: 5;
+        }
+    }
+
+    // .admission-info-reception__label
+
+    &__label {
+        font-size: 16px;
+        line-height: 22px;
+        margin: 0px 0px 10px 0px;
+    }
+
+    // .admission-info-reception__text
+
+    &__text {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 130%;
+    }
+}

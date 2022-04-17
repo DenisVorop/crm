@@ -1,0 +1,118 @@
+.records {
+
+    // .records__body
+
+    &__body {
+        background: #FFFFFF;
+        border: 1px solid #B7C6CB;
+        border-radius: 4px;
+        padding: 15px 20px 0 20px;
+        width: 1280px;
+    }
+
+    // .records__row
+
+    &__row {
+        margin: 0px 0px 15px 0px;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid #CCD6DA;
+        }
+
+        >:not(:last-child) {
+            margin: 0px 0px 16px 0px;
+        }
+    }
+
+    // .records__person
+
+    &__person {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+            width: fit-content;
+        }
+
+        p:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+    // .records__column
+
+    &__column {
+        font-size: 18px;
+        width: fit-content;
+        padding: 0 10px;
+
+        &:nth-child(4) {
+            border-radius: 4px;
+            padding: 4px 8px;
+        }
+
+        &:first-child {
+            font-weight: 700;
+        }
+
+        &:last-child {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            width: auto;
+        }
+    }
+
+    &__column-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex: 1 1 auto;
+    }
+}
+
+.info-visible {
+    opacity: 0;
+    transition: 0.7s all;
+}
+
+.info-visible.active {
+    opacity: 1;
+    transition: 0.7s opacity;
+}
+
+.sort__popup {
+    position: absolute;
+    right: 0;
+    top: 20px;
+    margin-top: 15px;
+    background: #ffffff;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px 0;
+    width: 160px;
+    z-index: 2;
+
+    ul {
+        overflow: hidden;
+
+        li {
+            padding: 12px 20px;
+            cursor: pointer;
+
+            &.active,
+            &:hover {
+                background: rgba(254, 95, 30, 0.05);
+            }
+
+            &.active {
+                font-weight: bold;
+                color: green;
+            }
+        }
+    }
+}

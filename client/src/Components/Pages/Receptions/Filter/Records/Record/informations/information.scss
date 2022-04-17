@@ -1,0 +1,166 @@
+.information {
+    margin: 0px 0px 15px 0px;
+
+    // .information__container
+
+    &__container {}
+
+    // .information__body
+
+    &__body {
+        background-color: #fff;
+    }
+
+    // .information__title
+
+    &__title {
+        font-weight: 700;
+        font-size: 22px;
+        text-align: center;
+        background: #B0DAEC;
+        border-radius: 6px 6px 0px 0px;
+        padding: 5px 22px 8px 12px;
+    }
+
+    // .information__card
+
+    &__card {
+        display: flex;
+    }
+
+    // .information__label
+
+    &__label {
+        // margin: 0px 68px 0px 0px;
+        font-size: 16px;
+        margin: 0px 0px 9px 0px;
+        line-height: 22px;
+    }
+
+    // .information__lasts
+
+    &__lasts {
+        padding: 14px 0px 14px 0px;
+    }
+
+    // .information__last
+
+    &__last {}
+}
+
+.card-information {
+    border-bottom: 1px solid #B7C6CB;
+    padding: 9px 0px;
+    margin: 0px 14px 6px 14px;
+
+    // .card-information__number
+
+    &__number {
+        display: flex;
+    }
+
+    // .card-information__num
+
+    &__num {
+        font-weight: 700;
+        font-size: 18px;
+        margin: 0px 9px 0px 0px;
+    }
+
+    // .card-information__copy
+
+    &__copy {}
+}
+
+.bold {
+    font-weight: 700;
+    font-size: 18px;
+    padding: 0px 0px 0px 14px;
+}
+
+.last-information {
+    background: rgba(203, 229, 240, 0.3);
+    padding: 14px;
+    width: -webkit-fill-available;
+
+    // .last-information__left
+
+    &__left {
+        display: flex;
+    }
+
+    // .last-information__doctor
+
+    &__doctor {}
+
+    // .last-information__label
+
+    &__label {
+        margin: 0px 0px 1px 0px;
+        font-weight: 700;
+        line-height: 19.1px;
+    }
+
+    // .last-information__name
+
+    &__name {
+        font-weight: 400;
+        margin: 0px 0px 14px 0px;
+        line-height: 19px;
+    }
+
+    // .last-information__item
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 12px;
+    }
+
+    // .last-information__date
+
+    &__date {
+        margin: 0px 28px 0px 0px;
+    }
+
+    // .last-information__building
+
+    &__building {
+        // margin: 0px 125px 0px 0px;
+    }
+
+    // .last-information__see
+
+    &__see {
+        position: relative;
+
+        &:hover {
+            .last-information__more-see {
+                opacity: 1;
+                transform: scale(1);
+                transition: all 0.3s ease 0s;
+            }
+        }
+    }
+
+    &__more-see {
+        position: absolute;
+        font-size: 12px;
+        color: rgb(183, 198, 203);
+        bottom: 20px;
+        right: 0px;
+        opacity: 0;
+        transform: scale(0);
+        transition: all 0.3s ease 0s;
+    }
+}
+
+.chetnoe {
+    background-color: #FFFFFF;
+}
+
+.lasts-information__records {
+    display: flex;
+    gap: 20px;
+}

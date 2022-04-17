@@ -1,0 +1,140 @@
+.new-rec {
+
+    // .new-rec__container
+
+    &__container {
+        padding: 30px 0px;
+
+        &:last-child {
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+        }
+    }
+
+    // .new-rec__body
+
+    &__body {
+        width: 676px;
+        margin: 0 auto;
+    }
+
+    // .new-rec__items
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 65px 78px 60px 78px;
+        background: #FFFFFF;
+        border: 1px solid #B7C6CB;
+        border-radius: 4px;
+    }
+
+    // .new-rec__item
+
+    &__item {
+        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 0px 0px 32px 0px;
+    }
+
+    // .new-rec__vvod
+
+    &__vvod {
+        display: flex;
+    }
+
+    // .new-rec__img
+
+    &__img {
+        img {
+            position: absolute;
+            margin: 12px 0px 0px -22px;
+        }
+    }
+
+    &__btn {
+        margin: 18px 0px 0px 0px;
+    }
+
+    // .new-rec__label
+
+    &__label {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 130%;
+        margin: 0px 35px 0px 0px;
+    }
+
+    // .new-rec__input
+
+    &__input {
+        input {
+            background: rgba(203, 229, 240, 0.3);
+            border: 1px solid #B7C6CB;
+            border-radius: 4px;
+            width: 366px;
+            height: 30px;
+            padding: 0px 0px 0px 6px;
+
+            &::placeholder {
+                font-family: 'Nunito Sans';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 25px;
+                color: #B7C6CB;
+            }
+        }
+    }
+
+
+    // -------------------
+
+    &__s {
+        display: flex;
+        align-items: center;
+    }
+
+    &__sex {
+        margin: 0px 0px 0px 8px;
+    }
+
+
+}
+
+.find {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease 0s;
+
+    &__field {
+        position: absolute;
+        z-index: 2;
+        background-color: #fff;
+        border: 1px solid #33B1CA;
+        width: 366px;
+        max-height: 100px;
+        border-radius: 5px;
+        margin: 5px 0px 0px 0px;
+    }
+}
+
+.find.active {
+    opacity: 1;
+    pointer-events: all;
+    z-index: 2;
+    background-color: #fff;
+    transition: all 0.3s ease 0s;
+}
+
+.visible-field {
+    padding: 5px;
+
+    &:not(:last-child) {
+        margin: 0px 0px 5px 0px;
+        border-bottom: 1px solid #33B1CA;
+    }
+}
