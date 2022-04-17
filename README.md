@@ -1,6 +1,3 @@
-login: admin
- 
-password: admin
 
 --------------------------------
 
