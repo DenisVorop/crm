@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 // import { addNewPatientient } from '../../../Redux/Reducers/usersReducer';
 
-import './newpatient.scss'
+// import './newpatient.scss'
 
 import Plan from '../../Common/Plan/Plan';
 import Button from '../../Common/Button/Button';
