@@ -1,3 +1,9 @@
+SPA SocialNetwork (PERN stack)
+
+React, Redux, Redux-thunk, React-router-dom, Formik, Axios, Yup, Json-server, SCSS
+Postgresql, Express, NodeJs
+
+<img width="1440" alt="Crm" src="https://user-images.githubusercontent.com/95316053/164320383-1fbe1e9d-c520-44c1-a77a-36ed81a41596.png">
 
 --------------------------------
 
