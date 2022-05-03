@@ -3,7 +3,24 @@ SPA SocialNetwork (PERN stack)
 React, Redux, Redux-thunk, React-router-dom, Formik, Axios, Yup, Json-server, SCSS
 Postgresql, Express, NodeJs
 
-<img width="1440" alt="Crm" src="https://user-images.githubusercontent.com/95316053/164320383-1fbe1e9d-c520-44c1-a77a-36ed81a41596.png">
+<b>Адрес - /receptions</b>
+<img width="1440" alt="Главная" src="https://user-images.githubusercontent.com/95316053/166465003-b731ed50-2519-44f9-9f84-335d2b149257.png">
+
+<b>Адрес - /cards</b>
+<img width="1440" alt="Карты" src="https://user-images.githubusercontent.com/95316053/166465012-350b8dda-b65a-4768-8ee3-c809ddb97e8e.png">
+
+<b>Адрес - /new-patient</b>
+<img width="1440" alt="Новый пациент" src="https://user-images.githubusercontent.com/95316053/166466482-a9afd6e0-6e6f-4eba-a07c-a099f916a565.png">
+
+<b>Адрес - /new-record</b>
+<img width="1440" alt="Новый прием" src="https://user-images.githubusercontent.com/95316053/166465027-011eeaf3-acbb-47ce-8011-e23557ba6e2a.png">
+
+<b>Адрес - /cards/`${card_num}`</b>
+<img width="1049" alt="Карта" src="https://user-images.githubusercontent.com/95316053/166465040-39b5a3a5-7e12-4392-9b32-e0404dfb9ac1.png">
+
+<b>Адрес - /receptions/`${card_num}`</b>
+<img width="1440" alt="Прием" src="https://user-images.githubusercontent.com/95316053/166465046-4adc5730-b4cc-402f-a6d3-a24e2cf74a16.png">
+
 
 --------------------------------
 
